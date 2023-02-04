@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RewindGun : MonoBehaviour
+public class RewindGun : Weapon
 {
     enum RewindMode
     {
@@ -21,12 +21,15 @@ public class RewindGun : MonoBehaviour
     private bool m_IsRewinding = false;
 
     [SerializeField]
-    private float m_RewindTimer = 3f;
+    private float m_RewindTimerMax = 2f;
+    [SerializeField]
+    private float m_RewindTimer = 0f;
 
     private List<DestructibleRoot> m_RootsInArea = new List<DestructibleRoot>();
     private List<int> m_RootsDestructionQueue = new List<int>();
 
     private TimeManager m_TimeManager;
+    private bool onCooldown = false;
 
     // Targeting mode
     RewindMode m_CurrentMode = RewindMode.Enemy;
@@ -40,15 +43,32 @@ public class RewindGun : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButton("Fire2") && m_TimeManager.TimeCharge > 0)
+        if (Input.GetButton("Fire3") && m_TimeManager.TimeCharge > 0 && !onCooldown)
         {
             m_CallRewind = true;
+            GetComponent<MeshRenderer>().enabled = true;
         }
         else
         {
-            m_CallRewind = false;
-        }
+            if (m_CallRewind)
+            {
+                m_RewindTimer = 0;
+                onCooldown = true;
+            }
+            GetComponent<MeshRenderer>().enabled = false;
 
+            m_CallRewind = false;
+
+        }
+        if(onCooldown)
+        {
+            if (m_RewindTimer <= m_RewindTimerMax)
+            {
+                m_RewindTimer += Time.deltaTime;
+            }
+            else
+                onCooldown = false;
+        }
         if (Input.GetButton("Fire3") && m_TimeManager.TimeCharge > 0)
         {
             RewindRoots();
