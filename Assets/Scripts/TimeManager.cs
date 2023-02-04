@@ -19,7 +19,11 @@ public class TimeManager : MonoBehaviour
         {
             crystalAmount = value;
             if (CrystalAmount >= CrystalReqForActivation)
-                ActivateBar();
+            {
+                FillBar();
+                crystalAmount = 0;
+            }
+                
         }
     }
     public int CrystalReqForActivation = 4;
@@ -35,26 +39,23 @@ public class TimeManager : MonoBehaviour
 
     void OnEnable()
     {
-        TimeCrystal.OnTimeCrystalCollected += IncrementTimeAndCrystal;
+        TimeCrystal.OnTimeCrystalCollected += IncrementCrystal;
     }
 
 
     void OnDisable()
     {
-        TimeCrystal.OnTimeCrystalCollected -= IncrementTimeAndCrystal;
+        TimeCrystal.OnTimeCrystalCollected -= IncrementCrystal;
     }
 
-    private void IncrementTimeAndCrystal()
+    private void IncrementCrystal()
     {
         CrystalAmount = Mathf.Clamp(CrystalAmount + 1, 0, 4);
-
-        if (timeBar.activeSelf)
-            TimeCharge = Mathf.Clamp(TimeCharge + 20, 0, 100); ;
     }
 
-    private void ActivateBar()
+    private void FillBar()
     {
-        timeBar.SetActive(true);
+        TimeCharge = Mathf.Clamp(TimeCharge + 20, 0, 100); ;
     }
     // Start is called before the first frame update
     void Start()
