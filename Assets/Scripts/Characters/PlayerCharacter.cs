@@ -51,9 +51,11 @@ public class PlayerCharacter : MonoBehaviour
             Life--;
             HP = 100;
         }
+        if (Input.GetButtonDown("Fire3"))
+            CycleWeapon();
 
         //if(Life <= 0)
-            //TODO Game Over
+        //TODO Game Over
     }
 
     void FixedUpdate()
@@ -161,8 +163,9 @@ public class PlayerCharacter : MonoBehaviour
     {
         if (m_CurrentWeaponIndex >= 0 && m_CurrentWeaponIndex < m_WeaponList.Count)
         {
-            m_WeaponList[m_CurrentWeaponIndex].StopShooting();
 
+            m_WeaponList[m_CurrentWeaponIndex].StopShooting();
+            m_WeaponList[m_CurrentWeaponIndex].gameObject.SetActive(false);
             if (m_CurrentWeaponIndex == m_NumWeapons - 1)
             {
                 m_CurrentWeaponIndex = 0;
@@ -171,6 +174,8 @@ public class PlayerCharacter : MonoBehaviour
             {
                 m_CurrentWeaponIndex++;
             }
+            m_WeaponList[m_CurrentWeaponIndex].gameObject.SetActive(true);
+
         }
     }
 }
