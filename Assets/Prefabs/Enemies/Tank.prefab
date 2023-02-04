@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3864484101927051267
+--- !u!1 &2640757053160920760
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,51 +8,51 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3864484101927051279}
-  - component: {fileID: 3864484101927051264}
-  - component: {fileID: 3864484101927051265}
-  - component: {fileID: 3864484101927051266}
-  - component: {fileID: 7072935439656593556}
-  - component: {fileID: 8010510721590016759}
-  - component: {fileID: -5940241187775524113}
-  - component: {fileID: 8456518168832709385}
+  - component: {fileID: 2640757053160920740}
+  - component: {fileID: 2640757053160920741}
+  - component: {fileID: 2640757053160920762}
+  - component: {fileID: 2640757053160920763}
+  - component: {fileID: 9078212559358026959}
+  - component: {fileID: -1488034527449280658}
+  - component: {fileID: 3676882308230571834}
+  - component: {fileID: 3236245056778291244}
   m_Layer: 0
-  m_Name: Kamikaze
-  m_TagString: Untagged
+  m_Name: Tank
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3864484101927051279
+--- !u!4 &2640757053160920740
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3864484101927051267}
+  m_GameObject: {fileID: 2640757053160920760}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &3864484101927051264
+--- !u!33 &2640757053160920741
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3864484101927051267}
+  m_GameObject: {fileID: 2640757053160920760}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &3864484101927051265
+--- !u!23 &2640757053160920762
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3864484101927051267}
+  m_GameObject: {fileID: 2640757053160920760}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -66,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: baf28db09b401104e8db4e48cbec3747, type: 2}
+  - {fileID: 2100000, guid: c88782459b6d8d9488a0b0f6da5320dd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -88,13 +88,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &3864484101927051266
+--- !u!136 &2640757053160920763
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3864484101927051267}
+  m_GameObject: {fileID: 2640757053160920760}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -102,17 +102,17 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!195 &7072935439656593556
+--- !u!195 &9078212559358026959
 NavMeshAgent:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3864484101927051267}
+  m_GameObject: {fileID: 2640757053160920760}
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 7.5
+  m_Speed: 4
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -124,30 +124,52 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &8010510721590016759
+--- !u!114 &-1488034527449280658
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3864484101927051267}
+  m_GameObject: {fileID: 2640757053160920760}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1570ced292562ae42a192d210335fad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isKamikaze: 1
-  maxHealth: 0
-  attack: 0
-  rangeAttack: 1
-  attackRate: 0
---- !u!54 &-5940241187775524113
+  isKamikaze: 0
+  isTank: 1
+  maxHealth: 10
+  attack: 33
+  rangeAttack: 1.5
+  attackRate: 1
+--- !u!114 &3676882308230571834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2640757053160920760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1853014c10a6eb46a8363fdc11758e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trackPositionRotation: 1
+  trackVelocity: 1
+  trackAnimator: 0
+  trackAudio: 0
+  trackParticles: 0
+  particleSettings:
+    particleLimiter: 0
+    particleResetTo: 0
+    particlesData: []
+--- !u!54 &3236245056778291244
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3864484101927051267}
+  m_GameObject: {fileID: 2640757053160920760}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -157,24 +179,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8456518168832709385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3864484101927051267}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4177d94e0d7d9d7449ec7b421cfc40b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trackPositionRotation: 0
-  trackVelocity: 0
-  trackAnimator: 0
-  trackAudio: 0
-  trackParticles: 0
-  particleSettings:
-    particleLimiter: 0
-    particleResetTo: 0
-    particlesData: []

@@ -3,28 +3,38 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class Creature : MonoBehaviour {
+    public int CurrentHealth { get; set; }
+    
     [SerializeField] 
     private bool isKamikaze;
-    
+    public bool isTank;
+
+
     [Header("Defense")]
     [SerializeField] private int maxHealth;
-    [NonSerialized] public int currentHealth;
 
     [Header("Attack")] 
-    [SerializeField] private float attack;
+    [SerializeField] private int attack;
     [SerializeField] private float rangeAttack; 
     [SerializeField] private float attackRate;
 
     private Transform _target;
     private NavMeshAgent _navMeshAgent;
     private float _time;
+    private bool IsDead => CurrentHealth <= 0;
 
     private void Start() {
+        CurrentHealth = maxHealth;
         _navMeshAgent = GetComponent<NavMeshAgent>();
         _target = GameObject.FindWithTag("Player").transform;
     }
 
     private void Update() {
+        if (IsDead) {
+            Destroy(gameObject);
+            return;
+        }
+        
         if(GameObject.Find("TimeManager"))
         {
             if(!GameObject.Find("TimeManager").GetComponent<TimeManager>().IsRewinding)
@@ -38,9 +48,8 @@ public class Creature : MonoBehaviour {
                         return;
                     }
 
-                    if (_time >= attackRate)
-                    {
-                        Debug.Log("Attack" + " : " + attack);
+                    if (_time >= attackRate) {
+                        _target.GetComponent<PlayerCharacter>().HP -= attack;
                         _time = 0;
                     }
                     _time += Time.deltaTime;
@@ -51,7 +60,12 @@ public class Creature : MonoBehaviour {
     }
 
     private void Boom() {
-        Debug.Log("Boom");
+        _target.GetComponent<PlayerCharacter>().HP -= attack;
         Destroy(gameObject);
+    }
+
+    private void OnDrawGizmos() {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, rangeAttack);
     }
 }

@@ -8,6 +8,8 @@ public class TimeManager : MonoBehaviour
     [SerializeField] private RewindManager rewindManager;
     [SerializeField] float rewindIntensity = 0.02f;
     float rewindValue = 0;
+    public delegate void CrystalAmountUpdated();
+    public static event CrystalAmountUpdated OnUpdateCrystalAmount;
 
     public int CrystalAmount
     {
@@ -19,7 +21,14 @@ public class TimeManager : MonoBehaviour
         {
             crystalAmount = value;
             if (CrystalAmount >= CrystalReqForActivation)
-                ActivateBar();
+            {
+                FillBar();
+                crystalAmount = 0;
+            }
+            if (OnUpdateCrystalAmount != null)
+                OnUpdateCrystalAmount();
+
+
         }
     }
     public int CrystalReqForActivation = 4;
@@ -35,26 +44,23 @@ public class TimeManager : MonoBehaviour
 
     void OnEnable()
     {
-        TimeCrystal.OnTimeCrystalCollected += IncrementTimeAndCrystal;
+        TimeCrystal.OnTimeCrystalCollected += IncrementCrystal;
     }
 
 
     void OnDisable()
     {
-        TimeCrystal.OnTimeCrystalCollected -= IncrementTimeAndCrystal;
+        TimeCrystal.OnTimeCrystalCollected -= IncrementCrystal;
     }
 
-    private void IncrementTimeAndCrystal()
+    private void IncrementCrystal()
     {
         CrystalAmount = Mathf.Clamp(CrystalAmount + 1, 0, 4);
-
-        if (timeBar.activeSelf)
-            TimeCharge = Mathf.Clamp(TimeCharge + 20, 0, 100); ;
     }
 
-    private void ActivateBar()
+    private void FillBar()
     {
-        timeBar.SetActive(true);
+        TimeCharge = Mathf.Clamp(TimeCharge + 20, 0, 100); ;
     }
     // Start is called before the first frame update
     void Start()

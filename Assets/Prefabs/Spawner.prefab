@@ -45,7 +45,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRate: 1.5
+  sizeX: 0
+  sizeY: 0
   enemies:
-  - {fileID: 3864484101927051267, guid: eee3bf60bd849c442aebd4078c404285, type: 3}
-  - {fileID: 8672334794133865670, guid: f94ef99d699d7bf4893a08e0c6d7f9ff, type: 3}
-  - {fileID: 2640757053160920760, guid: 21a6772e486107d42aaa1d1528a64346, type: 3}
+  - prefab: {fileID: 8672334794133865670, guid: f94ef99d699d7bf4893a08e0c6d7f9ff, type: 3}
+    probability: 50
+  - prefab: {fileID: 2640757053160920760, guid: 21a6772e486107d42aaa1d1528a64346, type: 3}
+    probability: 20
+  - prefab: {fileID: 3864484101927051267, guid: eee3bf60bd849c442aebd4078c404285, type: 3}
+    probability: 20
