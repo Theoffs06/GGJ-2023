@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Creature : MonoBehaviour {
+public class Creature : Character {
     public int CurrentHealth { get; set; }
     
     [SerializeField] 
@@ -23,13 +23,17 @@ public class Creature : MonoBehaviour {
     private float _time;
     private bool IsDead => CurrentHealth <= 0;
 
-    private void Start() {
+    protected override void Start() {
+        base.Start();
+
         CurrentHealth = maxHealth;
         _navMeshAgent = GetComponent<NavMeshAgent>();
         _target = GameObject.FindWithTag("Player").transform;
     }
 
-    private void Update() {
+    protected override void Update() {
+        base.Update();
+
         if (IsDead) {
             Destroy(gameObject);
             return;

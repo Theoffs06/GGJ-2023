@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-public class PlayerCharacter : MonoBehaviour
+public class PlayerCharacter : Character
 {
     // Components
     private CharacterController m_CharacterController = null;
@@ -31,16 +31,20 @@ public class PlayerCharacter : MonoBehaviour
     private bool m_GamepadMode = false;
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
+        base.Start();
+
         m_CharacterController = GetComponent<CharacterController>();
 
         InitializeWeapons();
     }
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
+        base.Update();
+
         UpdateMouseMoveAxis();
         UpdateInputMoveAxis();
         UpdateMouseShoot();
