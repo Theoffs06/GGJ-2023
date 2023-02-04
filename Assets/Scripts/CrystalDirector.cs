@@ -31,7 +31,7 @@ public class CrystalDirector : MonoBehaviour
         timerBeforeSpawn+= Time.deltaTime;
         if(timerBeforeSpawn >= timerBeforeSpawnMax)
         {
-            Vector3 pos = new Vector3(Random.Range(-sizeX, sizeX), 0, Random.Range(-sizeY, sizeY));
+            Vector3 pos = new Vector3(Random.Range(transform.position.x - sizeX / 2, transform.position.x + sizeX / 2), transform.position.y, Random.Range(transform.position.z - sizeY / 2, transform.position.z + sizeY / 2));
             Instantiate(Crystal, pos, new Quaternion(0,0,0,0));
             timerBeforeSpawn = 0;
             timerBeforeSpawnMax = initTimerBeforeSpawnMax();
