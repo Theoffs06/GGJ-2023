@@ -26,6 +26,10 @@ public class TimeManager : MonoBehaviour
 
     public int TimeCharge;
 
+    private float timer;
+    public float TimerMax = 1;
+    public int TimeChargeDecreaseValue = 2;
+
 
     void OnEnable()
     {
@@ -59,6 +63,20 @@ public class TimeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKey("space"))
+        {
+            if(TimeCharge >0)
+            {
+                timer += Time.deltaTime;
+                if(timer >= TimerMax)
+                {
+                    timer = 0;
+                    TimeCharge -= TimeChargeDecreaseValue;
+                }
+            }
+        }
+
+        if (Input.GetKeyUp("space"))
+            timer = 0;
     }
 }
