@@ -10,7 +10,9 @@ public class PlayerCharacter : MonoBehaviour
 
     // Player life
     [SerializeField]
-    private int m_HP = 100;
+    public int HP = 100;
+    public int Life = 3;
+
 
     // Player's moving speed
     [SerializeField]
@@ -43,6 +45,15 @@ public class PlayerCharacter : MonoBehaviour
         UpdateInputMoveAxis();
         UpdateMouseShoot();
         UpdateJoystickShootMoveAxis();
+
+        if(HP <= 0)
+        {
+            Life--;
+            HP = 100;
+        }
+
+        //if(Life <= 0)
+            //TODO Game Over
     }
 
     void FixedUpdate()
