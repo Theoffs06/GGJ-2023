@@ -30,7 +30,7 @@ public class WeaponMinigun : Weapon
         {
             if (Mathf.Approximately(m_CurrentDelay, 0f))
             {
-                Instantiate<Bullet>(m_BulletPrefab, transform.position, Quaternion.LookRotation(transform.forward));
+                Instantiate<Bullet>(m_BulletPrefab, transform.position, Quaternion.LookRotation(transform.forward) * Quaternion.Euler(0, -90, 0));
             }
 
             m_CurrentDelay += Time.deltaTime;

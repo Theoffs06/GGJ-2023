@@ -18,6 +18,7 @@ public class Weapon : MonoBehaviour
             direction.z = -stickDirection.y;
 
             transform.rotation = Quaternion.LookRotation(direction);
+            transform.rotation *= Quaternion.Euler(0, 90, 0);
             transform.localPosition = direction * m_DistanceFromPlayer;
         }
     }
