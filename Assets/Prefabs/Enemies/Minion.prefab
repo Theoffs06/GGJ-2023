@@ -137,6 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isKamikaze: 0
+  isTank: 0
   maxHealth: 3
   attack: 2
   rangeAttack: 1.2

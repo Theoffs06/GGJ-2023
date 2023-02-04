@@ -10,6 +10,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectId" id="2LGZ76h1EUuxL8CzuzYQa5hjN2r" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -79,13 +80,14 @@
       <option name="presentableId" value="Default" />
       <updated>1675499215988</updated>
       <workItem from="1675499218489" duration="5787000" />
-      <workItem from="1675517345157" duration="8205000" />
+      <workItem from="1675517345157" duration="11485000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="VcsManagerConfiguration">

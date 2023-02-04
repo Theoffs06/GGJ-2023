@@ -31,7 +31,15 @@ public class TimeCrystalBarUI : MonoBehaviour
             timer = 0;
         }
         else
+        {
             Crystals[timeManager.CrystalAmount - 1].SetActive(true);
+            for (int i = 0; i <= timeManager.CrystalAmount - 1 ; i++)
+            {
+                if(!Crystals[i].activeSelf)
+                    Crystals[i].SetActive(true);
+
+            }
+        }
 
     }
 
