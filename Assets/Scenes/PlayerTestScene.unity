@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 472420706}
   - component: {fileID: 472420711}
   - component: {fileID: 472420710}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlayerCharacter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -299,7 +299,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 338820edc16b5784a9da6bc64546b0df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HP: 100
+  HP: 100
+  Life: 3
   m_MoveSpeed: 10
   m_WeaponList:
   - {fileID: -5605058409142192886, guid: 649126b9703c48046ab7a15872515dc7, type: 3}
@@ -932,7 +933,7 @@ GameObject:
   - component: {fileID: 1568777654}
   - component: {fileID: 1568777653}
   - component: {fileID: 1568777655}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RewindGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
