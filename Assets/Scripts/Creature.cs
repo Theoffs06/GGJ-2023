@@ -25,19 +25,29 @@ public class Creature : MonoBehaviour {
     }
 
     private void Update() {
-        _navMeshAgent.destination = _target.position;
-        if (Vector3.Distance(transform.position, _target.position) <= rangeAttack) {
-            if (isKamikaze) {
-                Boom();
-                return;
-            }
+        if(GameObject.Find("TimeManager"))
+        {
+            if(!GameObject.Find("TimeManager").GetComponent<TimeManager>().IsRewinding)
+            {
+                _navMeshAgent.destination = _target.position;
+                if (Vector3.Distance(transform.position, _target.position) <= rangeAttack)
+                {
+                    if (isKamikaze)
+                    {
+                        Boom();
+                        return;
+                    }
 
-            if (_time >= attackRate) {
-                Debug.Log("Attack" + " : " + attack);
-                _time = 0;
+                    if (_time >= attackRate)
+                    {
+                        Debug.Log("Attack" + " : " + attack);
+                        _time = 0;
+                    }
+                    _time += Time.deltaTime;
+                }
             }
-            _time += Time.deltaTime;
         }
+
     }
 
     private void Boom() {

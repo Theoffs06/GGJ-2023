@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class TimeManager : MonoBehaviour
 {
-
-    // TODO, make the time rewinding stuff decrease TimeCharge
     [SerializeField]private int crystalAmount = 0;
+    [SerializeField] private RewindManager rewindManager;
+    [SerializeField] float rewindIntensity = 0.02f;
+    float rewindValue = 0;
+
     public int CrystalAmount
     {
         get
@@ -65,22 +67,37 @@ public class TimeManager : MonoBehaviour
     {
         if (Input.GetKey("space"))
         {
-            if(TimeCharge >0)
+            if (TimeCharge > 0)
             {
+                rewindValue += rewindIntensity;                 //While holding the button, we will gradually rewind more and more time into the past
+
+                if (!IsRewinding)
+                {
+                    rewindManager.StartRewindTimeBySeconds(rewindValue);
+                }
+                else
+                {
+                    if (rewindManager.HowManySecondsAvailableForRewind > rewindValue)      //Safety check so it is not grabbing values out of the bounds
+                        rewindManager.SetTimeSecondsInRewind(rewindValue);
+                }
                 IsRewinding = true;
                 timer += Time.deltaTime;
-                if(timer >= TimerMax)
+                if (timer >= TimerMax)
                 {
                     timer = 0;
                     TimeCharge -= TimeChargeDecreaseValue;
                 }
             }
         }
-
-        if (Input.GetKeyUp("space"))
+        else
         {
-            IsRewinding = false;
-            timer = 0;
+            if (IsRewinding)
+            {
+                rewindManager.StopRewindTimeBySeconds();
+                rewindValue = 0;
+                IsRewinding = false;
+                timer = 0;
+            }
         }
     }
 }
