@@ -39,6 +39,6 @@ public class Spawner : MonoBehaviour {
 
     private void OnDrawGizmos() {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(transform.position,new Vector3(sizeX,sizeY));
+        Gizmos.DrawWireCube(transform.position,new Vector3(sizeX,1,izeY));
     }
 }
