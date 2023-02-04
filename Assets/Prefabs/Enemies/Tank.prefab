@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 3236245056778291244}
   m_Layer: 0
   m_Name: Tank
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isKamikaze: 0
-  maxHealth: 0
+  maxHealth: 5
   attack: 3
   rangeAttack: 1
   attackRate: 3

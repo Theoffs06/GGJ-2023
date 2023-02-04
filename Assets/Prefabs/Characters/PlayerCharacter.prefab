@@ -114,6 +114,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HP: 100
   m_MoveSpeed: 10
+  m_WeaponList:
+  - {fileID: -5605058409142192886, guid: 649126b9703c48046ab7a15872515dc7, type: 3}
 --- !u!143 &2316962304827742315
 CharacterController:
   m_ObjectHideFlags: 0
