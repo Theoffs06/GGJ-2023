@@ -71,39 +71,52 @@ public class TimeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey("space"))
+        if(IsRewinding)
         {
-            if (TimeCharge > 0)
+            timer += Time.deltaTime;
+            if (timer >= TimerMax)
             {
-                rewindValue += rewindIntensity;                 //While holding the button, we will gradually rewind more and more time into the past
-
-                if (!IsRewinding)
-                {
-                    rewindManager.StartRewindTimeBySeconds(rewindValue);
-                }
-                else
-                {
-                    if (rewindManager.HowManySecondsAvailableForRewind > rewindValue)      //Safety check so it is not grabbing values out of the bounds
-                        rewindManager.SetTimeSecondsInRewind(rewindValue);
-                }
-                IsRewinding = true;
-                timer += Time.deltaTime;
-                if (timer >= TimerMax)
-                {
-                    timer = 0;
-                    TimeCharge -= TimeChargeDecreaseValue;
-                }
+                timer = 0;
+                TimeCharge -= TimeChargeDecreaseValue;
             }
         }
         else
         {
-            if (IsRewinding)
-            {
-                rewindManager.StopRewindTimeBySeconds();
-                rewindValue = 0;
-                IsRewinding = false;
-                timer = 0;
-            }
+            timer = 0;
         }
+        /* if (Input.GetKey("space"))
+         {
+             if (TimeCharge > 0)
+             {
+                 rewindValue += rewindIntensity;                 //While holding the button, we will gradually rewind more and more time into the past
+
+                 if (!IsRewinding)
+                 {
+                     rewindManager.StartRewindTimeBySeconds(rewindValue);
+                 }
+                 else
+                 {
+                     if (rewindManager.HowManySecondsAvailableForRewind > rewindValue)      //Safety check so it is not grabbing values out of the bounds
+                         rewindManager.SetTimeSecondsInRewind(rewindValue);
+                 }
+                 IsRewinding = true;
+                 timer += Time.deltaTime;
+                 if (timer >= TimerMax)
+                 {
+                     timer = 0;
+                     TimeCharge -= TimeChargeDecreaseValue;
+                 }
+             }
+         }
+         else
+         {
+             if (IsRewinding)
+             {
+                 rewindManager.StopRewindTimeBySeconds();
+                 rewindValue = 0;
+                 IsRewinding = false;
+                 timer = 0;
+             }
+         }*/
     }
 }

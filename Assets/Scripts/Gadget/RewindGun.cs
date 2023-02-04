@@ -26,6 +26,8 @@ public class RewindGun : MonoBehaviour
     private List<DestructibleRoot> m_RootsInArea = new List<DestructibleRoot>();
     private List<int> m_RootsDestructionQueue = new List<int>();
 
+    private TimeManager m_TimeManager;
+
     // Targeting mode
     RewindMode m_CurrentMode = RewindMode.Enemy;
 
@@ -33,11 +35,12 @@ public class RewindGun : MonoBehaviour
     void Start()
     {
         m_RewindManager = FindObjectOfType<RewindManager>();
+        m_TimeManager = GameObject.Find("TimeManager").GetComponent<TimeManager>();
     }
 
     private void Update()
     {
-        if (Input.GetButton("Fire2"))
+        if (Input.GetButton("Fire2") && m_TimeManager.TimeCharge > 0)
         {
             m_CallRewind = true;
         }
@@ -46,12 +49,12 @@ public class RewindGun : MonoBehaviour
             m_CallRewind = false;
         }
 
-        if (Input.GetButton("Fire3"))
+        if (Input.GetButton("Fire3") && m_TimeManager.TimeCharge > 0)
         {
             RewindRoots();
         }
         
-        if (Input.GetButtonUp("Fire3"))
+        if (Input.GetButtonUp("Fire3") && m_TimeManager.TimeCharge > 0)
         {
             StopRewindRoots();
         }
@@ -74,7 +77,9 @@ public class RewindGun : MonoBehaviour
             {
                 // Start rewind
                 m_RewindManager.StartRewindTimeBySeconds(m_RewindIntensity);
+
                 m_IsRewinding = true;
+                m_TimeManager.IsRewinding = true;
             }
             else
             {
@@ -90,6 +95,8 @@ public class RewindGun : MonoBehaviour
         {
             m_RewindManager.StopRewindTimeBySeconds();
             m_IsRewinding = false;
+            m_TimeManager.IsRewinding = false;
+
             m_RewindValue = 0f;
         }
         
@@ -97,6 +104,7 @@ public class RewindGun : MonoBehaviour
 
     void RewindRoots()
     {
+        m_TimeManager.IsRewinding = true;
         int numRoots = m_RootsInArea.Count;
         for (int i = 0; i < numRoots; i++)
         {
@@ -122,6 +130,7 @@ public class RewindGun : MonoBehaviour
 
     void StopRewindRoots()
     {
+        m_TimeManager.IsRewinding = false;
         int numRoots = m_RootsInArea.Count;
         for (int i = 0; i < numRoots; i++)
         {

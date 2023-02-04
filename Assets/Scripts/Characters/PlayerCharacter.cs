@@ -55,7 +55,7 @@ public class PlayerCharacter : Character
             Life--;
             HP = 100;
         }
-        if (Input.GetButtonDown("Fire3"))
+        if (Input.GetKeyDown("f"))
             CycleWeapon();
 
         //if(Life <= 0)

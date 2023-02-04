@@ -137,6 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isKamikaze: 1
+  isTank: 0
   maxHealth: 2
   attack: 100
   rangeAttack: 1
@@ -169,8 +170,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4177d94e0d7d9d7449ec7b421cfc40b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trackPositionRotation: 0
-  trackVelocity: 0
+  trackPositionRotation: 1
+  trackVelocity: 1
   trackAnimator: 0
   trackAudio: 0
   trackParticles: 0
