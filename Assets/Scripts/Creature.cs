@@ -61,4 +61,9 @@ public class Creature : MonoBehaviour {
         _target.GetComponent<PlayerCharacter>().HP -= attack;
         Destroy(gameObject);
     }
+
+    private void OnDrawGizmos() {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, rangeAttack);
+    }
 }
