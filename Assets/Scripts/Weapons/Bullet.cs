@@ -43,14 +43,11 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        string layerName = other.gameObject.name;
-        Debug.Log(layerName);
-
-        if (LayerMask.LayerToName(other.gameObject.layer) == "Enemy")
-        {
-            // TODO : Implement take damage.
+        if (other.CompareTag("Enemy"))
+        { 
+            other.GetComponent<Creature>().CurrentHealth -= 1;
         }
-
+        
         Destroy(gameObject);
     }
 }

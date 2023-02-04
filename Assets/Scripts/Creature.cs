@@ -3,12 +3,13 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class Creature : MonoBehaviour {
+    public int CurrentHealth { get; set; }
+    
     [SerializeField] 
     private bool isKamikaze;
     
     [Header("Defense")]
     [SerializeField] private int maxHealth;
-    [NonSerialized] public int currentHealth;
 
     [Header("Attack")] 
     [SerializeField] private float attack;
@@ -18,13 +19,20 @@ public class Creature : MonoBehaviour {
     private Transform _target;
     private NavMeshAgent _navMeshAgent;
     private float _time;
+    private bool IsDead => CurrentHealth <= 0;
 
     private void Start() {
+        CurrentHealth = maxHealth;
         _navMeshAgent = GetComponent<NavMeshAgent>();
         _target = GameObject.FindWithTag("Player").transform;
     }
 
     private void Update() {
+        if (IsDead) {
+            Destroy(gameObject);
+            return;
+        }
+        
         if(GameObject.Find("TimeManager"))
         {
             if(!GameObject.Find("TimeManager").GetComponent<TimeManager>().IsRewinding)
