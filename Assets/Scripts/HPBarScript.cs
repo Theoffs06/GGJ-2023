@@ -20,7 +20,7 @@ public class HPBarScript : MonoBehaviour
     {
 
         mainBar.value = player.HP;
-        if(player.Life != 0)
+        if(player.Life > 0)
             HPCells[player.Life - 1].value = player.HP;
 
     }

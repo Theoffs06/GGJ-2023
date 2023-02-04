@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class WeaponSword : Weapon
 {
+    public float TimerCooldownSwordMax = 3;
+    private float timerCooldownSword = 0;
+    private bool activated = true;
     public override void StartShooting()
     {
         base.StartShooting();
@@ -16,10 +19,23 @@ public class WeaponSword : Weapon
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy") && activated)
         {
-            collision.gameObject.GetComponent<Creature>().CurrentHealth -= 1;
+            Destroy(collision.gameObject);
+            timerCooldownSword = 0;
+            activated = false;
         }
 
+    }
+
+    private void Update()
+    {
+        if(!activated)
+        {
+            timerCooldownSword += Time.deltaTime;
+            if (timerCooldownSword >= TimerCooldownSwordMax)
+                activated = true;
+
+        }
     }
 }
