@@ -25,7 +25,15 @@ public class RewindGun : Weapon
     [SerializeField]
     private float m_RewindTimer = 0f;
 
+    [SerializeField]
+    private float m_CollectTimerMax = 0.5f;
+    [SerializeField]
+    private float m_CollectTimer = 0f;
+
+    [SerializeField]
     private List<DestructibleRoot> m_RootsInArea = new List<DestructibleRoot>();
+    [SerializeField] private List<TimeCrystal> m_CrystalInArea = new List<TimeCrystal>();
+    [SerializeField]
     private List<int> m_RootsDestructionQueue = new List<int>();
 
     private TimeManager m_TimeManager;
@@ -43,6 +51,27 @@ public class RewindGun : Weapon
 
     private void Update()
     {
+        if (Input.GetKey("e"))
+        {
+            m_CollectTimer += Time.deltaTime;
+            if (m_CollectTimer >= m_CollectTimerMax)
+            {
+                foreach (TimeCrystal crystal in m_CrystalInArea.ToArray())
+                {
+                    m_CrystalInArea.Remove(crystal);
+                    crystal.Collect();
+
+                }
+                m_CollectTimer = 0;
+
+            }
+        }
+        else
+        {
+            m_CollectTimer = 0;
+
+        }
+
         if (Input.GetButton("Fire3") && m_TimeManager.TimeCharge > 0 && !onCooldown)
         {
             m_CallRewind = true;
@@ -182,6 +211,14 @@ public class RewindGun : Weapon
                 m_RootsInArea.Add(newRoot);
             }
         }
+        if (LayerMask.LayerToName(other.gameObject.layer) == "Crystal")
+        {
+            TimeCrystal crystal = other.gameObject.GetComponent<TimeCrystal>();
+            if (crystal)
+            {
+                m_CrystalInArea.Add(crystal);
+            }
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -204,6 +241,15 @@ public class RewindGun : Weapon
             {
                 newRoot.StopRewind();
                 m_RootsInArea.Remove(newRoot);
+            }
+        }
+        if (LayerMask.LayerToName(other.gameObject.layer) == "Crystal")
+        {
+            TimeCrystal crystal = other.gameObject.GetComponent<TimeCrystal>();
+
+            if (crystal)
+            {
+                m_CrystalInArea.Remove(crystal);
             }
         }
     }
