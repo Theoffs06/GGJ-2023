@@ -12,7 +12,7 @@ public class Creature : MonoBehaviour {
     [SerializeField] private int maxHealth;
 
     [Header("Attack")] 
-    [SerializeField] private float attack;
+    [SerializeField] private int attack;
     [SerializeField] private float rangeAttack; 
     [SerializeField] private float attackRate;
 
@@ -46,9 +46,8 @@ public class Creature : MonoBehaviour {
                         return;
                     }
 
-                    if (_time >= attackRate)
-                    {
-                        Debug.Log("Attack" + " : " + attack);
+                    if (_time >= attackRate) {
+                        _target.GetComponent<PlayerCharacter>().HP -= attack;
                         _time = 0;
                     }
                     _time += Time.deltaTime;
@@ -59,7 +58,7 @@ public class Creature : MonoBehaviour {
     }
 
     private void Boom() {
-        Debug.Log("Boom");
+        _target.GetComponent<PlayerCharacter>().HP -= attack;
         Destroy(gameObject);
     }
 }

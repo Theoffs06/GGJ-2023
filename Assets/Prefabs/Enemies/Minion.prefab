@@ -138,7 +138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isKamikaze: 0
   maxHealth: 3
-  attack: 1
+  attack: 10
   rangeAttack: 1.2
   attackRate: 1.5
 --- !u!114 &439885916636279782
