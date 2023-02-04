@@ -8,6 +8,7 @@ public class HPBarScript : MonoBehaviour
     [SerializeField] private Slider mainBar;
     [SerializeField] private Slider[] HPCells;
     [SerializeField] private PlayerCharacter player;
+    [SerializeField] private GameObject gameOver;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,8 @@ public class HPBarScript : MonoBehaviour
         mainBar.value = player.HP;
         if(player.Life > 0)
             HPCells[player.Life - 1].value = player.HP;
+        if (player.Life == 0)
+            gameOver.SetActive(true);
 
     }
 }
