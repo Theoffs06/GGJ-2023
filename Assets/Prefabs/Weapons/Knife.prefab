@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7955646875185887434}
   - component: {fileID: 6576751698976073171}
   - component: {fileID: 7357454104531338105}
+  - component: {fileID: 2255850450696509341}
   m_Layer: 0
   m_Name: Knife
   m_TagString: Untagged
@@ -98,6 +99,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DistanceFromPlayer: 1
+  TimerCooldownSwordMax: 3
+  creaturesInsideCircle: []
 --- !u!65 &7357454104531338105
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -110,4 +113,17 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.6850438, y: 0.2166767, z: 0.3055922}
+  m_Center: {x: -0.4335805, y: 0, z: 0}
+--- !u!135 &2255850450696509341
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8460256947617732895}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.5
   m_Center: {x: -0.4335805, y: 0, z: 0}

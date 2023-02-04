@@ -7,7 +7,9 @@ public class Creature : MonoBehaviour {
     
     [SerializeField] 
     private bool isKamikaze;
-    
+    public bool isTank;
+
+
     [Header("Defense")]
     [SerializeField] private int maxHealth;
 
