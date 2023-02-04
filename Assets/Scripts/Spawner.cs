@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 [Serializable]
@@ -36,5 +35,10 @@ public class Spawner : MonoBehaviour {
             if (rng < tmpSum) return enemy.prefab;
         }
         return null;
+    }
+
+    private void OnDrawGizmos() {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(transform.position,new Vector3(sizeX,sizeY));
     }
 }
