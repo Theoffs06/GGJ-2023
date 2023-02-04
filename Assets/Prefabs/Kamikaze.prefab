@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 3864484101927051266}
   - component: {fileID: 7072935439656593556}
   - component: {fileID: 8010510721590016759}
-  - component: {fileID: 1376681757507362232}
   - component: {fileID: -5940241187775524113}
+  - component: {fileID: 8456518168832709385}
   m_Layer: 0
   m_Name: Kamikaze
   m_TagString: Untagged
@@ -141,27 +141,6 @@ MonoBehaviour:
   attack: 0
   rangeAttack: 1
   attackRate: 0
---- !u!114 &1376681757507362232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3864484101927051267}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1853014c10a6eb46a8363fdc11758e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trackPositionRotation: 1
-  trackVelocity: 1
-  trackAnimator: 0
-  trackAudio: 0
-  trackParticles: 0
-  particleSettings:
-    particleLimiter: 0
-    particleResetTo: 0
-    particlesData: []
 --- !u!54 &-5940241187775524113
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -178,3 +157,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8456518168832709385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3864484101927051267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4177d94e0d7d9d7449ec7b421cfc40b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trackPositionRotation: 0
+  trackVelocity: 0
+  trackAnimator: 0
+  trackAudio: 0
+  trackParticles: 0
+  particleSettings:
+    particleLimiter: 0
+    particleResetTo: 0
+    particlesData: []

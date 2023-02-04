@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 8672334794133865669}
   - component: {fileID: 1495031512130748557}
   - component: {fileID: -1320073247527835978}
-  - component: {fileID: 439885916636279782}
   - component: {fileID: -6162338247243790594}
+  - component: {fileID: 6750998310974896768}
   m_Layer: 0
   m_Name: Minion
   m_TagString: Untagged
@@ -141,27 +141,6 @@ MonoBehaviour:
   attack: 1
   rangeAttack: 1.2
   attackRate: 1.5
---- !u!114 &439885916636279782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8672334794133865670}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1853014c10a6eb46a8363fdc11758e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trackPositionRotation: 1
-  trackVelocity: 1
-  trackAnimator: 0
-  trackAudio: 0
-  trackParticles: 0
-  particleSettings:
-    particleLimiter: 0
-    particleResetTo: 0
-    particlesData: []
 --- !u!54 &-6162338247243790594
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -178,3 +157,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6750998310974896768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8672334794133865670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4177d94e0d7d9d7449ec7b421cfc40b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trackPositionRotation: 0
+  trackVelocity: 0
+  trackAnimator: 0
+  trackAudio: 0
+  trackParticles: 0
+  particleSettings:
+    particleLimiter: 0
+    particleResetTo: 0
+    particlesData: []
