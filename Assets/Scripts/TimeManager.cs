@@ -6,7 +6,7 @@ public class TimeManager : MonoBehaviour
 {
 
     // TODO, make the time rewinding stuff decrease TimeCharge
-    private int crystalAmount;
+    [SerializeField]private int crystalAmount = 0;
     public int CrystalAmount
     {
         get
@@ -40,7 +40,7 @@ public class TimeManager : MonoBehaviour
 
     private void IncrementTimeAndCrystal()
     {
-        CrystalAmount = Mathf.Clamp(CrystalAmount+1, 0, 4);
+        CrystalAmount = Mathf.Clamp(CrystalAmount + 1, 0, 4);
 
         if (timeBar.activeSelf)
             TimeCharge = Mathf.Clamp(TimeCharge + 20, 0, 100); ;

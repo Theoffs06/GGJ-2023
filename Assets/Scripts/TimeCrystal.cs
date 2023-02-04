@@ -17,21 +17,17 @@ public class TimeCrystal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //TODO, remove this when we can collect the crystal
-        if (Input.GetKeyDown("space"))
-        {
-            if (OnTimeCrystalCollected != null)
-                OnTimeCrystalCollected();
-        }
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        //TODO Make it work with player Benoît is working on
-
-        /*if (other.GetComponent<nameOfPlayerComponent>)
-         */
-        if (OnTimeCrystalCollected != null)
-            OnTimeCrystalCollected();
+        if (other.GetComponent<PlayerCharacter>())
+        {
+            if (OnTimeCrystalCollected != null)
+                OnTimeCrystalCollected();
+            Destroy(gameObject);
+        }
+        
     }
 }
