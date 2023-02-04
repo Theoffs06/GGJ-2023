@@ -300,6 +300,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HP: 100
   m_MoveSpeed: 10
+  m_WeaponList:
+  - {fileID: -5605058409142192886, guid: 649126b9703c48046ab7a15872515dc7, type: 3}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -708,7 +710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9d8b89a761b1b748b38b3a95bee3763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Distance: 10
+  m_Distance: 20
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0
