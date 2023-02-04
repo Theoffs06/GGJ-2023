@@ -8,6 +8,8 @@ public class TimeManager : MonoBehaviour
     [SerializeField] private RewindManager rewindManager;
     [SerializeField] float rewindIntensity = 0.02f;
     float rewindValue = 0;
+    public delegate void CrystalAmountUpdated();
+    public static event CrystalAmountUpdated OnUpdateCrystalAmount;
 
     public int CrystalAmount
     {
@@ -23,7 +25,10 @@ public class TimeManager : MonoBehaviour
                 FillBar();
                 crystalAmount = 0;
             }
-                
+            if (OnUpdateCrystalAmount != null)
+                OnUpdateCrystalAmount();
+
+
         }
     }
     public int CrystalReqForActivation = 4;

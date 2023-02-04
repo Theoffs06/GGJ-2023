@@ -28,18 +28,22 @@ public class WeaponSword : Weapon
         {
             foreach (Creature enemy in creaturesInsideCircle.ToArray())
             {
-                if (!enemy.gameObject.GetComponent<Creature>().isTank)
+                if(enemy != null)
                 {
-                    creaturesInsideCircle.Remove(enemy);
-                    Destroy(enemy.gameObject);
-                }
-                else
-                    enemy.gameObject.GetComponent<Creature>().CurrentHealth -= 8;
+                    if (!enemy.gameObject.GetComponent<Creature>().isTank)
+                    {
+                        creaturesInsideCircle.Remove(enemy);
+                        Destroy(enemy.gameObject);
+                    }
+                    else
+                        enemy.gameObject.GetComponent<Creature>().CurrentHealth -= 8;
 
-                timerCooldownSword = 0;
-                activated = false;
+                }
+
 
             }
+            timerCooldownSword = 0;
+            activated = false;
 
         }
 
