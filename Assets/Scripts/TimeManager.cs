@@ -29,7 +29,7 @@ public class TimeManager : MonoBehaviour
     private float timer;
     public float TimerMax = 1;
     public int TimeChargeDecreaseValue = 2;
-
+    public bool IsRewinding = false;
 
     void OnEnable()
     {
@@ -67,6 +67,7 @@ public class TimeManager : MonoBehaviour
         {
             if(TimeCharge >0)
             {
+                IsRewinding = true;
                 timer += Time.deltaTime;
                 if(timer >= TimerMax)
                 {
@@ -77,6 +78,9 @@ public class TimeManager : MonoBehaviour
         }
 
         if (Input.GetKeyUp("space"))
+        {
+            IsRewinding = false;
             timer = 0;
+        }
     }
 }
