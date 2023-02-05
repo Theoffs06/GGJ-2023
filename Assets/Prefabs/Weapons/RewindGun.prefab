@@ -49,6 +49,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_DistanceFromPlayer: 10
   m_RewindIntensity: 0.02
+  CallRewind: 0
+  m_IsRewinding: 0
   m_RewindTimerMax: 2
   m_RewindTimer: 3
   m_CollectTimerMax: 0.5
@@ -76,7 +78,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 632230357219342883, guid: da228e22b486fff4b8e23ee56748eb13, type: 3}
+  - {fileID: 8425554794358695251, guid: 577b67ec2c110a1418ba3b4ce9075fd0, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
