@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using FMODUnity;
 using UnityEngine;
 
 public class WeaponMinigun : Weapon
@@ -11,17 +12,25 @@ public class WeaponMinigun : Weapon
     private float m_DelayBetweenBullets = 0.2f;
     private float m_CurrentDelay = 0f;
 
+    [Header("Audio")] 
+    [SerializeField] private StudioEventEmitter actionEvent;
+
     public override void StartShooting()
     {
         base.StartShooting();
-
-        
+        if (!actionEvent.IsPlaying()) {
+            actionEvent.SetParameter("Auto", 0f);
+            actionEvent.Play();
+        }
     }
 
     public override void StopShooting()
     {
         base.StopShooting();
         m_CurrentDelay = 0f;
+        if (actionEvent.IsPlaying()) {
+            actionEvent.SetParameter("Auto", 0.15f);
+        }
     }
 
     public void Update()
