@@ -258,12 +258,13 @@ MonoBehaviour:
   m_WeaponList:
   - {fileID: 2729415616801983672, guid: 0fb544041141274469728cd50a60287f, type: 3}
   - {fileID: -5605058409142192886, guid: 649126b9703c48046ab7a15872515dc7, type: 3}
-  rewindGunPrefab: {fileID: 6604529804314427094, guid: fa4ef9768c0eb0b44989cf9361a2cd2d, type: 3}
+  rewindGunPrefab: {fileID: 642007832976266900, guid: a159c51e59e376249a4db084718dfe20, type: 3}
   m_Menu: {fileID: 0}
   damageEvent: {fileID: 472573808000023467}
   footstepEvent: {fileID: 6104758044672026259}
   brokenLifeEvent: {fileID: 2739218961227451893}
   deathEvent: {fileID: 4651903712831760662}
+  settingScreen: {fileID: 0}
 --- !u!143 &2316962304827742315
 CharacterController:
   m_ObjectHideFlags: 0
