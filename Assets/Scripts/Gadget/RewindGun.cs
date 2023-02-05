@@ -10,6 +10,9 @@ public class RewindGun : Weapon
         Root
     }
 
+    // Components
+    MeshRenderer m_MeshRenderer = null;
+
     [SerializeField]
     private float m_RewindIntensity = 0.02f;
 
@@ -17,7 +20,9 @@ public class RewindGun : Weapon
 
     private RewindManager m_RewindManager = null;
 
-    private bool m_CallRewind = false;
+    [SerializeField]
+    public bool CallRewind = false;
+    [SerializeField]
     private bool m_IsRewinding = false;
 
     [SerializeField]
@@ -47,11 +52,12 @@ public class RewindGun : Weapon
     {
         m_RewindManager = FindObjectOfType<RewindManager>();
         m_TimeManager = GameObject.Find("TimeManager").GetComponent<TimeManager>();
+        m_MeshRenderer = GetComponent<MeshRenderer>();
     }
 
     private void Update()
     {
-        if (Input.GetKey("e"))
+        if (Input.GetKey("q"))
         {
             m_CollectTimer += Time.deltaTime;
             if (m_CollectTimer >= m_CollectTimerMax)
@@ -66,27 +72,30 @@ public class RewindGun : Weapon
 
             }
         }
-        else
+        if (Input.GetKeyUp("q"))
         {
             m_CollectTimer = 0;
-
         }
 
-        if (Input.GetButton("Fire3") && m_TimeManager.TimeCharge > 0 && !onCooldown)
+        if (Input.GetButton("Fire2") )
         {
-            m_CallRewind = true;
-            GetComponent<MeshRenderer>().enabled = true;
+            if(m_TimeManager.TimeCharge > 0 && !onCooldown)
+            {
+                CallRewind = true;
+                Show(true);
+
+            }
         }
-        else
+        if (Input.GetButtonUp("Fire2"))
         {
-            if (m_CallRewind)
+            if (CallRewind)
             {
                 m_RewindTimer = 0;
                 onCooldown = true;
             }
-            GetComponent<MeshRenderer>().enabled = false;
+            Show(false);
+            CallRewind = false;
 
-            m_CallRewind = false;
 
         }
         if(onCooldown)
@@ -98,12 +107,12 @@ public class RewindGun : Weapon
             else
                 onCooldown = false;
         }
-        if (Input.GetButton("Fire3") && m_TimeManager.TimeCharge > 0)
+        if (Input.GetKey("e") && m_TimeManager.TimeCharge > 0)
         {
             RewindRoots();
         }
         
-        if (Input.GetButtonUp("Fire3") && m_TimeManager.TimeCharge > 0)
+        if (Input.GetKeyUp("e") && m_TimeManager.TimeCharge > 0)
         {
             StopRewindRoots();
         }
@@ -112,15 +121,23 @@ public class RewindGun : Weapon
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (m_CurrentMode == RewindMode.Enemy)
-        {
-            RewindEnemies();
-        }
+        RewindEnemies();
+
+    }
+
+    public bool IsVisible()
+    {
+        return m_MeshRenderer.enabled;
+    }
+
+    public void Show(bool show)
+    {
+        m_MeshRenderer.enabled = show;
     }
 
     void RewindEnemies()
     {
-        if (m_CallRewind)
+        if (CallRewind)
         {
             if (!m_IsRewinding)
             {
@@ -145,7 +162,6 @@ public class RewindGun : Weapon
             m_RewindManager.StopRewindTimeBySeconds();
             m_IsRewinding = false;
             m_TimeManager.IsRewinding = false;
-
             m_RewindValue = 0f;
         }
         

@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.Serialization;
 
 public class PlayerCharacter : Character
 {
@@ -25,13 +27,23 @@ public class PlayerCharacter : Character
     private List<Weapon> m_WeaponList;
     private int m_NumWeapons = 0;
     [SerializeField]
-    private Weapon rewindGunPrefab;
-    private Weapon rewindGun;
+    private RewindGun rewindGunPrefab;
+    private RewindGun rewindGun;
 
     // Current weapon index
     private int m_CurrentWeaponIndex = 0;
 
     private bool m_GamepadMode = false;
+    [SerializeField]
+    private GameObject m_Menu;
+
+    [Header("Audio")] 
+    public StudioEventEmitter damageEvent;
+    [SerializeField] private StudioEventEmitter footstepEvent;
+    [SerializeField] private StudioEventEmitter brokenLifeEvent; 
+    [SerializeField] private StudioEventEmitter deathEvent;
+
+    private bool playDeath;
 
     // Start is called before the first frame update
     protected override void Start()
@@ -55,10 +67,11 @@ public class PlayerCharacter : Character
 
         if(HP <= 0)
         {
+            brokenLifeEvent.Play();
             Life--;
             HP = 100;
         }
-        if (Input.GetKeyDown("f"))
+        if (Input.GetKeyDown("r"))
             CycleWeapon();
 
         if (rewindGun.GetComponent<MeshRenderer>().enabled)
@@ -66,9 +79,19 @@ public class PlayerCharacter : Character
         else
             m_WeaponList[m_CurrentWeaponIndex].gameObject.SetActive(true);
 
+        if (Input.GetKeyDown("escape"))
+        {
+            m_Menu.GetComponent<Menu>().Pause();
 
-        //if(Life <= 0)
-        //TODO Game Over
+        }
+
+
+        if (Life <= 0) {
+            if (!deathEvent.IsPlaying() && !playDeath) {
+                playDeath = true;
+                deathEvent.Play();
+            }
+        }
     }
 
     void FixedUpdate()
@@ -76,6 +99,17 @@ public class PlayerCharacter : Character
         Vector3 velocity = Vector3.zero;
         velocity.x = m_MoveAxis.x * m_MoveSpeed;
         velocity.z = m_MoveAxis.y * m_MoveSpeed;
+
+        Debug.Log(m_MoveAxis);
+        if (m_MoveAxis.x != 0 || m_MoveAxis.y != 0) {
+            if (!footstepEvent.IsPlaying()) {
+                footstepEvent.Play();
+            }
+        }
+        else {
+            Debug.Log("oui c'est ça");
+            footstepEvent.Stop();
+        }
 
         if (m_MeshTransform && velocity.sqrMagnitude > 0f)
         {
@@ -110,7 +144,8 @@ public class PlayerCharacter : Character
 
         if (rewindGunPrefab)
         {
-            rewindGun = Instantiate<Weapon>(rewindGunPrefab, transform);
+            rewindGun = Instantiate<RewindGun>(rewindGunPrefab, transform);
+            rewindGun.Show(false);
         }
     }
 
