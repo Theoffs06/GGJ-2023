@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using FMODUnity;
 using UnityEngine;
 
 public class RewindGun : Weapon
@@ -40,6 +41,9 @@ public class RewindGun : Weapon
     [SerializeField] private List<TimeCrystal> m_CrystalInArea = new List<TimeCrystal>();
     [SerializeField]
     private List<int> m_RootsDestructionQueue = new List<int>();
+
+    [Header("Audio")] 
+    [SerializeField] private StudioEventEmitter actionEvent;
 
     private TimeManager m_TimeManager;
     private bool onCooldown = false;
@@ -83,7 +87,9 @@ public class RewindGun : Weapon
             {
                 CallRewind = true;
                 Show(true);
-
+                if (!actionEvent.IsPlaying()) {
+                    actionEvent.Play();
+                }
             }
         }
         if (Input.GetButtonUp("Fire2"))

@@ -565,6 +565,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6604529804314427094, guid: fa4ef9768c0eb0b44989cf9361a2cd2d, type: 3}
+      propertyPath: actionEvent
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6604529804314427094, guid: fa4ef9768c0eb0b44989cf9361a2cd2d, type: 3}
       propertyPath: m_RewindTimer
       value: 0
       objectReference: {fileID: 0}
@@ -2320,6 +2324,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 374901916680047188, guid: 8c42608225b0c4644905e0b3edaad22a, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2206135871539226364, guid: 8c42608225b0c4644905e0b3edaad22a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2408,9 +2416,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerCharacter
       objectReference: {fileID: 0}
+    - target: {fileID: 4428452782473808310, guid: 8c42608225b0c4644905e0b3edaad22a, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6036459151342807540, guid: 8c42608225b0c4644905e0b3edaad22a, type: 3}
       propertyPath: m_Radius
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6188501991655527643, guid: 8c42608225b0c4644905e0b3edaad22a, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8907578331597461589, guid: 8c42608225b0c4644905e0b3edaad22a, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c42608225b0c4644905e0b3edaad22a, type: 3}
@@ -2650,15 +2670,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9030061702125899036, guid: 25d6b2ef870521e48afd5af870f93a10, type: 3}
       propertyPath: sizeX
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 9030061702125899036, guid: 25d6b2ef870521e48afd5af870f93a10, type: 3}
       propertyPath: sizeY
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 9030061702125899036, guid: 25d6b2ef870521e48afd5af870f93a10, type: 3}
       propertyPath: TimerBeforeSpawnMin
-      value: 0.1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9030061702125899036, guid: 25d6b2ef870521e48afd5af870f93a10, type: 3}
       propertyPath: Corners.Array.data[0]
@@ -2666,7 +2686,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9030061702125899036, guid: 25d6b2ef870521e48afd5af870f93a10, type: 3}
       propertyPath: TimerBeforeSpawnMaxTreshold
-      value: 0.1
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 9030061702125899037, guid: 25d6b2ef870521e48afd5af870f93a10, type: 3}
       propertyPath: m_RootOrder
