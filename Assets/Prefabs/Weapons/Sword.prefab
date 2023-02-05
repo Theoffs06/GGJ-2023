@@ -125,8 +125,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.6850438, y: 0.2166767, z: 0.3055922}
-  m_Center: {x: -0.4335805, y: 0, z: 0}
+  m_Size: {x: 0.3055922, y: 0.2166767, z: 1.6850438}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &4858531206643739581
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -139,7 +139,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 1.5
-  m_Center: {x: -0.4335805, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &2017475974957642788
 PrefabInstance:
   m_ObjectHideFlags: 0
