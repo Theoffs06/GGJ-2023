@@ -49,6 +49,9 @@ public class RewindGun : Weapon
     private TimeManager m_TimeManager;
     private bool onCooldown = false;
 
+    [SerializeField]
+    private GameObject m_MeshObject;
+
     // Targeting mode
     RewindMode m_CurrentMode = RewindMode.Enemy;
 
@@ -118,12 +121,20 @@ public class RewindGun : Weapon
 
     public bool IsVisible()
     {
-        return m_MeshRenderer.enabled;
+        if (m_MeshObject)
+        {
+            return m_MeshObject.activeSelf;
+        }
+
+        return false;
     }
 
     public void Show(bool show)
     {
-        m_MeshRenderer.enabled = show;
+        if (m_MeshObject)
+        {
+            m_MeshObject.SetActive(show);
+        }
     }
 
     void RewindEnemies()

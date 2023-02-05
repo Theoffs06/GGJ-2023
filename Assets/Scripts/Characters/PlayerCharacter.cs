@@ -74,7 +74,7 @@ public class PlayerCharacter : Character
         if (Input.GetKeyDown("r"))
             CycleWeapon();
 
-        if (rewindGun.GetComponent<MeshRenderer>().enabled)
+        if (rewindGun.IsVisible())
             m_WeaponList[m_CurrentWeaponIndex].gameObject.SetActive(false);
         else
             m_WeaponList[m_CurrentWeaponIndex].gameObject.SetActive(true);
@@ -148,6 +148,7 @@ public class PlayerCharacter : Character
         if (rewindGunPrefab)
         {
             rewindGun = Instantiate<RewindGun>(rewindGunPrefab, transform);
+            rewindGun.PivotPoint = collider.center;
             rewindGun.Show(false);
         }
     }
