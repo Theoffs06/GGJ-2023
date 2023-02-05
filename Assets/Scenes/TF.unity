@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -733,7 +733,7 @@ PrefabInstance:
       objectReference: {fileID: 1562316435}
     - target: {fileID: 3837315917424718319, guid: 37563d9d2aea0cb45bd0d3b1c642713c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.00012207031
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5457664469140782227, guid: 37563d9d2aea0cb45bd0d3b1c642713c, type: 3}
       propertyPath: m_Pivot.x
@@ -1529,6 +1529,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5394615945992655321, guid: 5c7d1a58ecdd47b46ad2c0a5a0428401, type: 3}
+      propertyPath: enemies.Array.data[2].probability
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 5394615945992655322, guid: 5c7d1a58ecdd47b46ad2c0a5a0428401, type: 3}
       propertyPath: m_RootOrder
       value: 4

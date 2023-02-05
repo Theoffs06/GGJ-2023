@@ -115,7 +115,7 @@ CapsuleCollider:
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!195 &7072935439656593556
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -135,7 +135,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 20
-  m_BaseOffset: 1
+  m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &8010510721590016759
@@ -161,6 +161,7 @@ MonoBehaviour:
   attackEvent: {fileID: 0}
   deathEvent: {fileID: 3570913554421224998}
   boomEvent: {fileID: 2384645738795687076}
+  explosion: {fileID: 1895192538389106137, guid: 8b84eb185d2e0cb45a1730e0a3d98ed6, type: 3}
 --- !u!54 &-5940241187775524113
 Rigidbody:
   m_ObjectHideFlags: 0

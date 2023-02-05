@@ -30,6 +30,8 @@ public class Creature : Character {
     [SerializeField] private StudioEventEmitter deathEvent; 
     [SerializeField] private StudioEventEmitter boomEvent;
 
+    [SerializeField] private GameObject explosion;
+
     private Transform _target;
     private NavMeshAgent _navMeshAgent;
     private float _time;
@@ -79,7 +81,9 @@ public class Creature : Character {
     
     private void Boom() {
         boomEvent.Play();
+        var explosionObj = Instantiate(explosion, transform.position, transform.localRotation);
         _target.GetComponent<PlayerCharacter>().HP -= attack;
+        Destroy(explosionObj, 0.5f);
         Destroy(gameObject);
     }
 

@@ -76,7 +76,7 @@ public class PlayerCharacter : Character
         if (Input.GetKeyDown("r"))
             CycleWeapon();
 
-        if (rewindGun.GetComponent<MeshRenderer>().enabled)
+        if (rewindGun.IsVisible())
             m_WeaponList[m_CurrentWeaponIndex].gameObject.SetActive(false);
         else
             m_WeaponList[m_CurrentWeaponIndex].gameObject.SetActive(true);
@@ -101,15 +101,13 @@ public class PlayerCharacter : Character
         Vector3 velocity = Vector3.zero;
         velocity.x = m_MoveAxis.x * m_MoveSpeed;
         velocity.z = m_MoveAxis.y * m_MoveSpeed;
-
-        Debug.Log(m_MoveAxis);
+        
         if (m_MoveAxis.x != 0 || m_MoveAxis.y != 0) {
             if (!footstepEvent.IsPlaying()) {
                 footstepEvent.Play();
             }
         }
         else {
-            Debug.Log("oui c'est ça");
             footstepEvent.Stop();
         }
 
@@ -150,6 +148,7 @@ public class PlayerCharacter : Character
         if (rewindGunPrefab)
         {
             rewindGun = Instantiate<RewindGun>(rewindGunPrefab, transform);
+            rewindGun.PivotPoint = collider.center;
             rewindGun.Show(false);
         }
     }
