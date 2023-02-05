@@ -47,7 +47,7 @@ public class WeaponMinigun : Weapon
             {
                 Instantiate<Bullet>(m_BulletPrefab, transform.position, Quaternion.LookRotation(transform.forward) * Quaternion.Euler(0, 90, 0));
             }
-            Camera.main.GetComponent<ScreenShake>().Shake(m_Duration);
+            GameObject.Find("ScreenShake").GetComponent<ScreenShake>().Shake(m_Duration);
             m_CurrentDelay += Time.deltaTime;
 
             if (m_CurrentDelay >= m_DelayBetweenBullets)
