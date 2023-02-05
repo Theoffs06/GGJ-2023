@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RewindGun : MonoBehaviour
+public class RewindGun : Weapon
 {
     enum RewindMode
     {
@@ -21,10 +21,23 @@ public class RewindGun : MonoBehaviour
     private bool m_IsRewinding = false;
 
     [SerializeField]
-    private float m_RewindTimer = 3f;
+    private float m_RewindTimerMax = 2f;
+    [SerializeField]
+    private float m_RewindTimer = 0f;
 
+    [SerializeField]
+    private float m_CollectTimerMax = 0.5f;
+    [SerializeField]
+    private float m_CollectTimer = 0f;
+
+    [SerializeField]
     private List<DestructibleRoot> m_RootsInArea = new List<DestructibleRoot>();
+    [SerializeField] private List<TimeCrystal> m_CrystalInArea = new List<TimeCrystal>();
+    [SerializeField]
     private List<int> m_RootsDestructionQueue = new List<int>();
+
+    private TimeManager m_TimeManager;
+    private bool onCooldown = false;
 
     // Targeting mode
     RewindMode m_CurrentMode = RewindMode.Enemy;
@@ -33,25 +46,64 @@ public class RewindGun : MonoBehaviour
     void Start()
     {
         m_RewindManager = FindObjectOfType<RewindManager>();
+        m_TimeManager = GameObject.Find("TimeManager").GetComponent<TimeManager>();
     }
 
     private void Update()
     {
-        if (Input.GetButton("Fire2"))
+        if (Input.GetKey("e"))
         {
-            m_CallRewind = true;
+            m_CollectTimer += Time.deltaTime;
+            if (m_CollectTimer >= m_CollectTimerMax)
+            {
+                foreach (TimeCrystal crystal in m_CrystalInArea.ToArray())
+                {
+                    m_CrystalInArea.Remove(crystal);
+                    crystal.Collect();
+
+                }
+                m_CollectTimer = 0;
+
+            }
         }
         else
         {
-            m_CallRewind = false;
+            m_CollectTimer = 0;
+
         }
 
-        if (Input.GetButton("Fire3"))
+        if (Input.GetButton("Fire3") && m_TimeManager.TimeCharge > 0 && !onCooldown)
+        {
+            m_CallRewind = true;
+            GetComponent<MeshRenderer>().enabled = true;
+        }
+        else
+        {
+            if (m_CallRewind)
+            {
+                m_RewindTimer = 0;
+                onCooldown = true;
+            }
+            GetComponent<MeshRenderer>().enabled = false;
+
+            m_CallRewind = false;
+
+        }
+        if(onCooldown)
+        {
+            if (m_RewindTimer <= m_RewindTimerMax)
+            {
+                m_RewindTimer += Time.deltaTime;
+            }
+            else
+                onCooldown = false;
+        }
+        if (Input.GetButton("Fire3") && m_TimeManager.TimeCharge > 0)
         {
             RewindRoots();
         }
         
-        if (Input.GetButtonUp("Fire3"))
+        if (Input.GetButtonUp("Fire3") && m_TimeManager.TimeCharge > 0)
         {
             StopRewindRoots();
         }
@@ -74,7 +126,9 @@ public class RewindGun : MonoBehaviour
             {
                 // Start rewind
                 m_RewindManager.StartRewindTimeBySeconds(m_RewindIntensity);
+
                 m_IsRewinding = true;
+                m_TimeManager.IsRewinding = true;
             }
             else
             {
@@ -90,6 +144,8 @@ public class RewindGun : MonoBehaviour
         {
             m_RewindManager.StopRewindTimeBySeconds();
             m_IsRewinding = false;
+            m_TimeManager.IsRewinding = false;
+
             m_RewindValue = 0f;
         }
         
@@ -97,6 +153,7 @@ public class RewindGun : MonoBehaviour
 
     void RewindRoots()
     {
+        m_TimeManager.IsRewinding = true;
         int numRoots = m_RootsInArea.Count;
         for (int i = 0; i < numRoots; i++)
         {
@@ -122,6 +179,7 @@ public class RewindGun : MonoBehaviour
 
     void StopRewindRoots()
     {
+        m_TimeManager.IsRewinding = false;
         int numRoots = m_RootsInArea.Count;
         for (int i = 0; i < numRoots; i++)
         {
@@ -153,6 +211,14 @@ public class RewindGun : MonoBehaviour
                 m_RootsInArea.Add(newRoot);
             }
         }
+        if (LayerMask.LayerToName(other.gameObject.layer) == "Crystal")
+        {
+            TimeCrystal crystal = other.gameObject.GetComponent<TimeCrystal>();
+            if (crystal)
+            {
+                m_CrystalInArea.Add(crystal);
+            }
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -175,6 +241,15 @@ public class RewindGun : MonoBehaviour
             {
                 newRoot.StopRewind();
                 m_RootsInArea.Remove(newRoot);
+            }
+        }
+        if (LayerMask.LayerToName(other.gameObject.layer) == "Crystal")
+        {
+            TimeCrystal crystal = other.gameObject.GetComponent<TimeCrystal>();
+
+            if (crystal)
+            {
+                m_CrystalInArea.Remove(crystal);
             }
         }
     }

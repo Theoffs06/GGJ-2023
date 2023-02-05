@@ -26,14 +26,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 448263345001909784}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 10, z: 0}
+  m_LocalRotation: {x: 0.5084012, y: -0, z: -0, w: 0.8611203}
+  m_LocalPosition: {x: 0, y: 10, z: -5.89}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2316962304827742312}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 61.115, y: 0, z: 0}
 --- !u!20 &4018474070200593934
 Camera:
   m_ObjectHideFlags: 0
@@ -151,6 +151,7 @@ Transform:
   m_Children:
   - {fileID: 2206135871539226364}
   - {fileID: 7043944272436465748}
+  - {fileID: 6036459151342807536}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -187,6 +188,7 @@ MonoBehaviour:
   m_WeaponList:
   - {fileID: 6576751698976073171, guid: 5cf9d5a26341d2647929de44fff0e22d, type: 3}
   - {fileID: -5605058409142192886, guid: 649126b9703c48046ab7a15872515dc7, type: 3}
+  rewindGun: {fileID: 6036459151342807543}
 --- !u!143 &2316962304827742315
 CharacterController:
   m_ObjectHideFlags: 0

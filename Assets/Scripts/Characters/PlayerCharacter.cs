@@ -24,6 +24,8 @@ public class PlayerCharacter : Character
     [SerializeField]
     private List<Weapon> m_WeaponList;
     private int m_NumWeapons = 0;
+    [SerializeField]
+    private Weapon rewindGun;
 
     // Current weapon index
     private int m_CurrentWeaponIndex = 0;
@@ -55,8 +57,14 @@ public class PlayerCharacter : Character
             Life--;
             HP = 100;
         }
-        if (Input.GetButtonDown("Fire3"))
+        if (Input.GetKeyDown("f"))
             CycleWeapon();
+
+        if (rewindGun.GetComponent<MeshRenderer>().enabled)
+            m_WeaponList[m_CurrentWeaponIndex].GetComponent<MeshRenderer>().enabled = false;
+        else
+            m_WeaponList[m_CurrentWeaponIndex].GetComponent<MeshRenderer>().enabled = true;
+
 
         //if(Life <= 0)
         //TODO Game Over
@@ -114,6 +122,7 @@ public class PlayerCharacter : Character
             direction.x *= -1;
 
             m_WeaponList[m_CurrentWeaponIndex].SetWeaponRotation(direction);
+            rewindGun.SetWeaponRotation(direction);
         }
     }
 
@@ -148,7 +157,8 @@ public class PlayerCharacter : Character
             {
                 m_WeaponList[m_CurrentWeaponIndex].SetWeaponRotation(stickDirection);
             }
-                
+            rewindGun.SetWeaponRotation(stickDirection);
+
             FireWeapon();
         }
         else if (m_GamepadMode)
