@@ -11,6 +11,9 @@ public class RewindGun : Weapon
         Root
     }
 
+    // Components
+    MeshRenderer m_MeshRenderer = null;
+
     [SerializeField]
     private float m_RewindIntensity = 0.02f;
 
@@ -53,6 +56,7 @@ public class RewindGun : Weapon
     {
         m_RewindManager = FindObjectOfType<RewindManager>();
         m_TimeManager = GameObject.Find("TimeManager").GetComponent<TimeManager>();
+        m_MeshRenderer = GetComponent<MeshRenderer>();
     }
 
     private void Update()
@@ -82,7 +86,7 @@ public class RewindGun : Weapon
             if(m_TimeManager.TimeCharge > 0 && !onCooldown)
             {
                 CallRewind = true;
-                GetComponent<MeshRenderer>().enabled = true;
+                Show(true);
                 if (!actionEvent.IsPlaying()) {
                     actionEvent.Play();
                 }
@@ -95,7 +99,7 @@ public class RewindGun : Weapon
                 m_RewindTimer = 0;
                 onCooldown = true;
             }
-            GetComponent<MeshRenderer>().enabled = false;
+            Show(false);
             CallRewind = false;
 
 
@@ -128,6 +132,16 @@ public class RewindGun : Weapon
     {
         RewindEnemies();
 
+    }
+
+    public bool IsVisible()
+    {
+        return m_MeshRenderer.enabled;
+    }
+
+    public void Show(bool show)
+    {
+        m_MeshRenderer.enabled = show;
     }
 
     void RewindEnemies()

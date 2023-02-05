@@ -54,7 +54,7 @@ public class Creature : Character {
         
         if(GameObject.Find("TimeManager"))
         {
-            if(!GameObject.Find("RewindGun").GetComponent<RewindGun>().CallRewind)
+            if(!FindObjectOfType<RewindGun>().GetComponent<RewindGun>().CallRewind)
             {
                 _navMeshAgent.destination = _target.position;
                 if (Vector3.Distance(transform.position, _target.position) <= rangeAttack)
