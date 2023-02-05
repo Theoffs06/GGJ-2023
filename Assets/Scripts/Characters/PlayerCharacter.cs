@@ -68,6 +68,16 @@ public class PlayerCharacter : Character
         velocity.x = m_MoveAxis.x * m_MoveSpeed;
         velocity.z = m_MoveAxis.y * m_MoveSpeed;
 
+        if (m_MeshTransform && velocity.sqrMagnitude > 0f)
+        {
+            m_MeshTransform.rotation = Quaternion.LookRotation(velocity.normalized);
+        }
+
+        if (m_Animator)
+        {
+            m_Animator.SetFloat("Speed", velocity.magnitude);
+        }
+
         if (m_CharacterController)
         {
             m_CharacterController.SimpleMove(velocity);
