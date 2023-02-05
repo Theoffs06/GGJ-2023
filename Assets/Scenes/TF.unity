@@ -677,15 +677,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 900020386, guid: 37563d9d2aea0cb45bd0d3b1c642713c, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 930804705, guid: 37563d9d2aea0cb45bd0d3b1c642713c, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2528405867178235607, guid: 37563d9d2aea0cb45bd0d3b1c642713c, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3837315915768102974, guid: 37563d9d2aea0cb45bd0d3b1c642713c, type: 3}
       propertyPath: m_AnchorMax.x
@@ -821,7 +821,7 @@ PrefabInstance:
       objectReference: {fileID: 1461265047}
     - target: {fileID: 7008530066879141325, guid: 37563d9d2aea0cb45bd0d3b1c642713c, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7103853763407114528, guid: 37563d9d2aea0cb45bd0d3b1c642713c, type: 3}
       propertyPath: timeManager
@@ -829,7 +829,7 @@ PrefabInstance:
       objectReference: {fileID: 1461265047}
     - target: {fileID: 7245022003153681039, guid: 37563d9d2aea0cb45bd0d3b1c642713c, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37563d9d2aea0cb45bd0d3b1c642713c, type: 3}
@@ -1005,6 +1005,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 338820edc16b5784a9da6bc64546b0df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1569142936 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 930804704, guid: 37563d9d2aea0cb45bd0d3b1c642713c, type: 3}
+  m_PrefabInstance: {fileID: 1387522498}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1649149099
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1181,7 +1186,7 @@ PrefabInstance:
     - target: {fileID: 2316962304827742314, guid: 8c42608225b0c4644905e0b3edaad22a, type: 3}
       propertyPath: m_Menu
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1569142936}
     - target: {fileID: 2316962304827742314, guid: 8c42608225b0c4644905e0b3edaad22a, type: 3}
       propertyPath: rewindGun
       value: 
