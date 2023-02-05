@@ -129,11 +129,14 @@ public class PlayerCharacter : Character
 
     void InitializeWeapons()
     {
+        CapsuleCollider collider = GetComponent<CapsuleCollider>();
+
         m_NumWeapons = m_WeaponList.Count;
 
         for (int i = 0;i < m_NumWeapons; i++)
         {
             m_WeaponList[i] = Instantiate<Weapon>(m_WeaponList[i], transform);
+            m_WeaponList[i].PivotPoint = collider.center;
             m_WeaponList[i].SetWeaponRotation(transform.forward);
 
             if (i != m_CurrentWeaponIndex)
