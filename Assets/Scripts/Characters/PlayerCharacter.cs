@@ -101,15 +101,13 @@ public class PlayerCharacter : Character
         Vector3 velocity = Vector3.zero;
         velocity.x = m_MoveAxis.x * m_MoveSpeed;
         velocity.z = m_MoveAxis.y * m_MoveSpeed;
-
-        Debug.Log(m_MoveAxis);
+        
         if (m_MoveAxis.x != 0 || m_MoveAxis.y != 0) {
             if (!footstepEvent.IsPlaying()) {
                 footstepEvent.Play();
             }
         }
         else {
-            Debug.Log("oui c'est ça");
             footstepEvent.Stop();
         }
 
