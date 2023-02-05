@@ -2540,7 +2540,7 @@ PrefabInstance:
       objectReference: {fileID: 972898762}
     - target: {fileID: 7832660018612773979, guid: 680d02d51c94a3344827c16dd82748a6, type: 3}
       propertyPath: TimeChargeDecreaseValue
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7832660018612773988, guid: 680d02d51c94a3344827c16dd82748a6, type: 3}
       propertyPath: m_RootOrder
