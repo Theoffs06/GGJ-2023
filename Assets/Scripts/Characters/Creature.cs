@@ -67,6 +67,7 @@ public class Creature : Character {
 
                     if (_time >= attackRate) {
                         attackEvent.Play();
+                        _target.GetComponent<PlayerCharacter>().damageEvent.Play();
                         _target.GetComponent<PlayerCharacter>().HP -= attack;
                         _time = 0;
                     }

@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.Serialization;
 
 public class PlayerCharacter : Character
 {
@@ -34,6 +36,13 @@ public class PlayerCharacter : Character
     [SerializeField]
     private GameObject m_Menu;
 
+    [Header("Audio")] 
+    public StudioEventEmitter damageEvent;
+    [SerializeField] private StudioEventEmitter brokenLifeEvent; 
+    [SerializeField] private StudioEventEmitter deathEvent;
+
+    private bool playDeath;
+
     // Start is called before the first frame update
     protected override void Start()
     {
@@ -56,6 +65,7 @@ public class PlayerCharacter : Character
 
         if(HP <= 0)
         {
+            brokenLifeEvent.Play();
             Life--;
             HP = 100;
         }
@@ -74,8 +84,12 @@ public class PlayerCharacter : Character
         }
 
 
-        //if(Life <= 0)
-        //TODO Game Over
+        if (Life <= 0) {
+            if (!deathEvent.IsPlaying() && !playDeath) {
+                playDeath = true;
+                deathEvent.Play();
+            }
+        }
     }
 
     void FixedUpdate()
