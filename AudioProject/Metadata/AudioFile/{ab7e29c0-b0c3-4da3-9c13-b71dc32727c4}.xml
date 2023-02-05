@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{ab7e29c0-b0c3-4da3-9c13-b71dc32727c4}">
+		<property name="assetPath">
+			<value>Player_fight_sound_3.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.29999999999999999</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{7537c99e-f4cb-49b6-862d-12d2446b7726}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{47714333-3b17-43f2-a96a-2d871454f2e0}">
+		<property name="assetPath">
+			<value>Battery_recharged.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{7537c99e-f4cb-49b6-862d-12d2446b7726}</destination>
+		</relationship>
+	</object>
+</objects>
