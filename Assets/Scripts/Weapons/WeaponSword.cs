@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using FMODUnity;
 using UnityEngine;
 
 public class WeaponSword : Weapon
@@ -8,6 +9,10 @@ public class WeaponSword : Weapon
     private float timerCooldownSword = 0;
     private bool activated = true;
     public List<Creature> creaturesInsideCircle = new List<Creature>();
+
+    [Header("Audio")] 
+    [SerializeField] private StudioEventEmitter cutEvent;
+    
     public override void StartShooting()
     {
         base.StartShooting();
@@ -30,6 +35,7 @@ public class WeaponSword : Weapon
             {
                 if(enemy != null)
                 {
+                    cutEvent.Play();
                     if (!enemy.gameObject.GetComponent<Creature>().isTank)
                     {
                         creaturesInsideCircle.Remove(enemy);

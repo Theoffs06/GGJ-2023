@@ -38,6 +38,7 @@ public class PlayerCharacter : Character
 
     [Header("Audio")] 
     public StudioEventEmitter damageEvent;
+    [SerializeField] private StudioEventEmitter footstepEvent;
     [SerializeField] private StudioEventEmitter brokenLifeEvent; 
     [SerializeField] private StudioEventEmitter deathEvent;
 
@@ -97,6 +98,17 @@ public class PlayerCharacter : Character
         Vector3 velocity = Vector3.zero;
         velocity.x = m_MoveAxis.x * m_MoveSpeed;
         velocity.z = m_MoveAxis.y * m_MoveSpeed;
+
+        Debug.Log(m_MoveAxis);
+        if (m_MoveAxis.x != 0 || m_MoveAxis.y != 0) {
+            if (!footstepEvent.IsPlaying()) {
+                footstepEvent.Play();
+            }
+        }
+        else {
+            Debug.Log("oui c'est ça");
+            footstepEvent.Stop();
+        }
 
         if (m_MeshTransform && velocity.sqrMagnitude > 0f)
         {

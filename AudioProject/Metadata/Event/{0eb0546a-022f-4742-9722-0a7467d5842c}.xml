@@ -2,13 +2,13 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{0eb0546a-022f-4742-9722-0a7467d5842c}">
 		<property name="name">
-			<value>Recharged</value>
+			<value>RechargedTimeGun</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
 		</property>
 		<relationship name="folder">
-			<destination>{63d96da9-337b-4d4c-9a51-67ae555eae3b}</destination>
+			<destination>{a3e716fb-887a-42d7-a8ca-516833241ae7}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{9712be45-55af-45f2-aa4f-9c1783acd35a}</destination>
