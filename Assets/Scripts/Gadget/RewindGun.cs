@@ -12,6 +12,7 @@ public class RewindGun : Weapon
     }
 
     // Components
+    [SerializeField]
     MeshRenderer m_MeshRenderer = null;
 
     [SerializeField]

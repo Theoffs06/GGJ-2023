@@ -12,7 +12,7 @@ public struct EnemyProbability {
 
 public class Spawner : MonoBehaviour {
     [Header("Params of spawner")]
-    [SerializeField] private float spawnRate;
+    [SerializeField] public float spawnRate;
 
     [SerializeField] private int sizeX;
     [SerializeField] private int sizeY;

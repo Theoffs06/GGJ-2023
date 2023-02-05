@@ -52,10 +52,10 @@ public class Creature : Character {
             return;
         }
         
-        if(GameObject.Find("TimeManager"))
+        /*if(GameObject.Find("TimeManager"))
         {
             if(!FindObjectOfType<RewindGun>().GetComponent<RewindGun>().CallRewind)
-            {
+            {*/
                 _navMeshAgent.destination = _target.position;
                 if (Vector3.Distance(transform.position, _target.position) <= rangeAttack)
                 {
@@ -73,8 +73,8 @@ public class Creature : Character {
                     }
                     _time += Time.deltaTime;
                 }
-            }
-        }
+            /*}
+        }*/
     }
     
     private void Boom() {

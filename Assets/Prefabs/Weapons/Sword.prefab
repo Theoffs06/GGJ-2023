@@ -113,7 +113,7 @@ MonoBehaviour:
   m_DistanceFromPlayer: 1
   TimerCooldownSwordMax: 3
   creaturesInsideCircle: []
-  cutEvent: {fileID: 0}
+  cutEvent: {fileID: 3345275446246218791}
 --- !u!65 &7827889485571897851
 BoxCollider:
   m_ObjectHideFlags: 0
