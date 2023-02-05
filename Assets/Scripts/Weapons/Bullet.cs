@@ -43,6 +43,8 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other.gameObject.name);
+
         if (other.CompareTag("Enemy"))
         { 
             other.GetComponent<Creature>().damageEvent.Play();
