@@ -62,25 +62,6 @@ public class RewindGun : Weapon
 
     private void Update()
     {
-        if (Input.GetKey("q"))
-        {
-            m_CollectTimer += Time.deltaTime;
-            if (m_CollectTimer >= m_CollectTimerMax)
-            {
-                foreach (TimeCrystal crystal in m_CrystalInArea.ToArray())
-                {
-                    m_CrystalInArea.Remove(crystal);
-                    //crystal.Collect();
-
-                }
-                m_CollectTimer = 0;
-
-            }
-        }
-        if (Input.GetKeyUp("q"))
-        {
-            m_CollectTimer = 0;
-        }
 
         if (Input.GetButton("Fire2") )
         {
@@ -237,14 +218,7 @@ public class RewindGun : Weapon
                 m_RootsInArea.Add(newRoot);
             }
         }
-        if (LayerMask.LayerToName(other.gameObject.layer) == "Crystal")
-        {
-            TimeCrystal crystal = other.gameObject.GetComponent<TimeCrystal>();
-            if (crystal)
-            {
-                m_CrystalInArea.Add(crystal);
-            }
-        }
+
     }
 
     private void OnTriggerExit(Collider other)
@@ -267,15 +241,6 @@ public class RewindGun : Weapon
             {
                 newRoot.StopRewind();
                 m_RootsInArea.Remove(newRoot);
-            }
-        }
-        if (LayerMask.LayerToName(other.gameObject.layer) == "Crystal")
-        {
-            TimeCrystal crystal = other.gameObject.GetComponent<TimeCrystal>();
-
-            if (crystal)
-            {
-                m_CrystalInArea.Remove(crystal);
             }
         }
     }
