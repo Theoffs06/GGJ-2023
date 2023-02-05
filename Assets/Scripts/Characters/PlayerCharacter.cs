@@ -62,9 +62,9 @@ public class PlayerCharacter : Character
             CycleWeapon();
 
         if (rewindGun.GetComponent<MeshRenderer>().enabled)
-            m_WeaponList[m_CurrentWeaponIndex].GetComponent<MeshRenderer>().enabled = false;
+            m_WeaponList[m_CurrentWeaponIndex].gameObject.SetActive(false);
         else
-            m_WeaponList[m_CurrentWeaponIndex].GetComponent<MeshRenderer>().enabled = true;
+            m_WeaponList[m_CurrentWeaponIndex].gameObject.SetActive(true);
 
 
         //if(Life <= 0)
