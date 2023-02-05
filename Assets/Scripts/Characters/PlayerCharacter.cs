@@ -31,6 +31,8 @@ public class PlayerCharacter : Character
     private int m_CurrentWeaponIndex = 0;
 
     private bool m_GamepadMode = false;
+    [SerializeField]
+    private GameObject m_Menu;
 
     // Start is called before the first frame update
     protected override void Start()
@@ -64,6 +66,12 @@ public class PlayerCharacter : Character
             m_WeaponList[m_CurrentWeaponIndex].GetComponent<MeshRenderer>().enabled = false;
         else
             m_WeaponList[m_CurrentWeaponIndex].GetComponent<MeshRenderer>().enabled = true;
+
+        if (Input.GetKeyDown("escape"))
+        {
+            m_Menu.GetComponent<Menu>().Pause();
+
+        }
 
 
         //if(Life <= 0)
