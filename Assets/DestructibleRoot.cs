@@ -7,8 +7,15 @@ public class DestructibleRoot : MonoBehaviour
 {
     [SerializeField]
     private float m_DestructionTime = 5f;
-    private float m_RemainingTime = 0f;
 
+    [SerializeField]
+    private float m_ChangeRespawnRate = 1.5f;
+    [SerializeField]
+    private float m_BaseRespawnRate = 6f;
+
+    private float m_RemainingTime = 0f;
+    [SerializeField]
+    private Spawner[] m_Spawners;
     [SerializeField]
     private float m_RegenTimeScale = 2f;
 
@@ -38,6 +45,8 @@ public class DestructibleRoot : MonoBehaviour
 
     public void Rewind()
     {
+        foreach (Spawner spawner in m_Spawners)
+            spawner.spawnRate = m_ChangeRespawnRate;
         m_IsRewinding = true;
         m_RemainingTime -= Time.deltaTime;
         UpdateScale();
@@ -45,6 +54,9 @@ public class DestructibleRoot : MonoBehaviour
 
     public void StopRewind()
     {
+        foreach (Spawner spawner in m_Spawners)
+            spawner.spawnRate = m_BaseRespawnRate;
+
         m_IsRewinding = false;
     }
 
