@@ -19,7 +19,7 @@ public class Creature : Character {
     [SerializeField] private int maxHealth;
 
     [Header("Attack")] 
-    [SerializeField] private int attack;
+    [SerializeField] private float attack;
     [SerializeField] private float rangeAttack; 
     [SerializeField] private float attackRate;
 

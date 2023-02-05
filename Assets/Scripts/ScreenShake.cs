@@ -7,7 +7,7 @@ public class ScreenShake : MonoBehaviour
 {
     [SerializeField] private Camera camera;
     [SerializeField] private float shake = 0f;
-    [SerializeField] private float shakeAmount = 0.7f;
+    [SerializeField] private float shakeAmount = 0.1f;
     [SerializeField] private Slider slider;
 
     private Vector3 startPos;

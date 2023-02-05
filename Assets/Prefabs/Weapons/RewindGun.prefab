@@ -113,7 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_DistanceFromPlayer: 1
   m_MeshRenderer: {fileID: 6604529804314427092}
-  m_RewindIntensity: 0.02
+  m_RewindIntensity: 0.04
   CallRewind: 0
   m_IsRewinding: 0
   m_RewindTimerMax: 2
@@ -185,7 +185,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 50
+  m_Radius: 2000
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &9132609059066480527
 GameObject:

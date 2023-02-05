@@ -278,9 +278,9 @@ MonoBehaviour:
   isKamikaze: 0
   isTank: 0
   maxHealth: 3
-  attack: 2
+  attack: 5.26
   rangeAttack: 1.5
-  attackRate: 0.5
+  attackRate: 1
   damageEvent: {fileID: 4419424121705389519}
   attackEvent: {fileID: 6935893851900143775}
   deathEvent: {fileID: 6140815183464550435}

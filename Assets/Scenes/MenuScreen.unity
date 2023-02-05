@@ -963,7 +963,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camera: {fileID: 0}
   shake: 0
-  shakeAmount: 0.7
+  shakeAmount: 0.1
   slider: {fileID: 0}
 --- !u!4 &553478340
 Transform:
