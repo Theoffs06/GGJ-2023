@@ -25,6 +25,7 @@ public class PlayerCharacter : Character
     private List<Weapon> m_WeaponList;
     private int m_NumWeapons = 0;
     [SerializeField]
+    private Weapon rewindGunPrefab;
     private Weapon rewindGun;
 
     // Current weapon index
@@ -100,6 +101,16 @@ public class PlayerCharacter : Character
         {
             m_WeaponList[i] = Instantiate<Weapon>(m_WeaponList[i], transform);
             m_WeaponList[i].SetWeaponRotation(transform.forward);
+
+            if (i != m_CurrentWeaponIndex)
+            {
+                m_WeaponList[i].gameObject.SetActive(false);
+            }
+        }
+
+        if (rewindGunPrefab)
+        {
+            rewindGun = Instantiate<Weapon>(rewindGunPrefab, transform);
         }
     }
 

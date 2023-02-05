@@ -192,7 +192,7 @@ MonoBehaviour:
   m_WeaponList:
   - {fileID: 6576751698976073171, guid: 5cf9d5a26341d2647929de44fff0e22d, type: 3}
   - {fileID: -5605058409142192886, guid: 649126b9703c48046ab7a15872515dc7, type: 3}
-  rewindGun: {fileID: 6604529804314427094, guid: fa4ef9768c0eb0b44989cf9361a2cd2d, type: 3}
+  rewindGunPrefab: {fileID: 6604529804314427094, guid: fa4ef9768c0eb0b44989cf9361a2cd2d, type: 3}
 --- !u!143 &2316962304827742315
 CharacterController:
   m_ObjectHideFlags: 0
