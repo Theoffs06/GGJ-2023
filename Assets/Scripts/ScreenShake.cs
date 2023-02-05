@@ -16,8 +16,12 @@ public class ScreenShake : MonoBehaviour
     {
         camera = Camera.main;
         startPos = camera.transform.localPosition;
-        slider = GameObject.Find("ScreenShakeSlider").GetComponent<Slider>();
-        slider.value = shakeAmount;
+        if (GameObject.Find("ScreenShakeSlider"))
+        {
+            slider = GameObject.Find("ScreenShakeSlider").GetComponent<Slider>();
+            slider.value = shakeAmount;
+        }
+
     }
     private void Awake()
     {
