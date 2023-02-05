@@ -44,9 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c529b2f7f6b7bf9428b9571e5d56c5db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimerBeforeSpawnMin: 10
-  TimerBeforeSpawnMaxTreshold: 15
+  TimerBeforeSpawnMin: 5
+  TimerBeforeSpawnMaxTreshold: 10
   Crystal: {fileID: 4950453166415762233, guid: 7d054a41e2fbae245acab2d6f354a0c4, type: 3}
-  Corners:
-  - {fileID: 0}
-  - {fileID: 0}
+  sizeX: 0
+  sizeY: 0

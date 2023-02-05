@@ -22,13 +22,15 @@ public class TimeCrystal : MonoBehaviour
     {
 
     }
-
-    public void Collect()
+    private void OnTriggerEnter(Collider other)
     {
-        if (OnTimeCrystalCollected != null)
-            OnTimeCrystalCollected();
-        collectEvent.Play();
-        Destroy(gameObject);
+        if(other.GetComponent<PlayerCharacter>())
+        {
+            if (OnTimeCrystalCollected != null)
+                OnTimeCrystalCollected();
+            collectEvent.Play();
+            Destroy(gameObject);
+        }
 
     }
 }

@@ -44,13 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9c63df236558f146b5b0094a913e586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRate: 1.5
+  spawnRate: 2
   sizeX: 0
   sizeY: 0
   enemies:
   - prefab: {fileID: 8672334794133865670, guid: f94ef99d699d7bf4893a08e0c6d7f9ff, type: 3}
-    probability: 50
+    probability: 94
   - prefab: {fileID: 2640757053160920760, guid: 21a6772e486107d42aaa1d1528a64346, type: 3}
-    probability: 20
+    probability: 5
   - prefab: {fileID: 3864484101927051267, guid: eee3bf60bd849c442aebd4078c404285, type: 3}
-    probability: 20
+    probability: 2

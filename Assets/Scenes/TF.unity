@@ -565,14 +565,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6604529804314427094, guid: fa4ef9768c0eb0b44989cf9361a2cd2d, type: 3}
-      propertyPath: actionEvent
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6604529804314427094, guid: fa4ef9768c0eb0b44989cf9361a2cd2d, type: 3}
-      propertyPath: m_RewindTimer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6604529804314427094, guid: fa4ef9768c0eb0b44989cf9361a2cd2d, type: 3}
       propertyPath: m_DistanceFromPlayer
       value: 1
       objectReference: {fileID: 0}
@@ -2412,6 +2404,10 @@ PrefabInstance:
       propertyPath: rewindGun
       value: 
       objectReference: {fileID: 380002763}
+    - target: {fileID: 2316962304827742314, guid: 8c42608225b0c4644905e0b3edaad22a, type: 3}
+      propertyPath: m_MoveSpeed
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2316962304827742316, guid: 8c42608225b0c4644905e0b3edaad22a, type: 3}
       propertyPath: m_Name
       value: PlayerCharacter
@@ -2678,7 +2674,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9030061702125899036, guid: 25d6b2ef870521e48afd5af870f93a10, type: 3}
       propertyPath: TimerBeforeSpawnMin
-      value: 10
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 9030061702125899036, guid: 25d6b2ef870521e48afd5af870f93a10, type: 3}
       propertyPath: Corners.Array.data[0]
@@ -2686,7 +2682,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9030061702125899036, guid: 25d6b2ef870521e48afd5af870f93a10, type: 3}
       propertyPath: TimerBeforeSpawnMaxTreshold
-      value: 15
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9030061702125899037, guid: 25d6b2ef870521e48afd5af870f93a10, type: 3}
       propertyPath: m_RootOrder
