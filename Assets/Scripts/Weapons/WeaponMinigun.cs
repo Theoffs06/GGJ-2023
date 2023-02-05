@@ -15,6 +15,10 @@ public class WeaponMinigun : Weapon
     [Header("Audio")] 
     [SerializeField] private StudioEventEmitter actionEvent;
 
+    [SerializeField]
+    private float m_Duration = 0.1f;
+
+
     public override void StartShooting()
     {
         base.StartShooting();
@@ -43,7 +47,7 @@ public class WeaponMinigun : Weapon
             {
                 Instantiate<Bullet>(m_BulletPrefab, transform.position, Quaternion.LookRotation(transform.forward) * Quaternion.Euler(0, 90, 0));
             }
-
+            Camera.main.GetComponent<ScreenShake>().Shake(m_Duration);
             m_CurrentDelay += Time.deltaTime;
 
             if (m_CurrentDelay >= m_DelayBetweenBullets)
