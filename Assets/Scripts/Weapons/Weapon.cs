@@ -6,6 +6,13 @@ public class Weapon : MonoBehaviour
 {
     protected bool m_IsShooting = false;
 
+    private Vector3 m_PivotPoint = Vector3.zero;
+    public Vector3 PivotPoint
+    {
+        get { return m_PivotPoint; }
+        set { m_PivotPoint = value; }
+    }
+
     [SerializeField]
     protected float m_DistanceFromPlayer = 10f;
 
@@ -18,8 +25,8 @@ public class Weapon : MonoBehaviour
             direction.z = -stickDirection.y;
 
             transform.rotation = Quaternion.LookRotation(direction);
-            transform.rotation *= Quaternion.Euler(0, 90, 0);
-            transform.localPosition = direction * m_DistanceFromPlayer;
+            //transform.rotation *= Quaternion.Euler(0, 90, 0);
+            transform.localPosition = m_PivotPoint + direction * m_DistanceFromPlayer;
         }
     }
 
