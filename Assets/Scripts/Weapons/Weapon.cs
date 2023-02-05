@@ -20,8 +20,6 @@ public class Weapon : MonoBehaviour
             transform.rotation = Quaternion.LookRotation(direction);
             transform.rotation *= Quaternion.Euler(0, 90, 0);
             transform.localPosition = direction * m_DistanceFromPlayer;
-
-            Debug.Log(gameObject.name + " : " + transform.localPosition);
         }
     }
 
