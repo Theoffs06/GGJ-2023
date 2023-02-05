@@ -65,17 +65,30 @@ public class RewindGun : Weapon
 
     private void Update()
     {
-
-        if (Input.GetButton("Fire2") )
+        if(m_TimeManager.TimeCharge > 0)
         {
-            if(m_TimeManager.TimeCharge > 0 && !onCooldown)
+            if (Input.GetButton("Fire2"))
             {
-                CallRewind = true;
-                Show(true);
-                if (!actionEvent.IsPlaying()) {
-                    actionEvent.Play();
+                if (m_TimeManager.TimeCharge > 0 && !onCooldown)
+                {
+                    CallRewind = true;
+                    Show(true);
+                    if (!actionEvent.IsPlaying())
+                    {
+                        actionEvent.Play();
+                    }
                 }
             }
+        }
+        else
+        {
+            if (CallRewind)
+            {
+                m_RewindTimer = 0;
+                onCooldown = true;
+            }
+            Show(false);
+            CallRewind = false;
         }
         if (Input.GetButtonUp("Fire2"))
         {
@@ -89,7 +102,7 @@ public class RewindGun : Weapon
 
 
         }
-        if(onCooldown)
+        if (onCooldown)
         {
             if (m_RewindTimer <= m_RewindTimerMax)
             {

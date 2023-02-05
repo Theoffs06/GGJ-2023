@@ -44,6 +44,8 @@ public class PlayerCharacter : Character
     [SerializeField] private StudioEventEmitter deathEvent;
 
     private bool playDeath;
+    [SerializeField] private GameObject settingScreen;
+
 
     // Start is called before the first frame update
     protected override void Start()
@@ -79,7 +81,7 @@ public class PlayerCharacter : Character
         else
             m_WeaponList[m_CurrentWeaponIndex].gameObject.SetActive(true);
 
-        if (Input.GetKeyDown("escape"))
+        if (Input.GetKeyDown("escape") && !settingScreen.activeSelf)
         {
             m_Menu.GetComponent<Menu>().Pause();
 
