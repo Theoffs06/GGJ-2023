@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using FMODUnity;
 using UnityEngine;
 
 public class DestructibleRoot : MonoBehaviour
@@ -15,6 +16,9 @@ public class DestructibleRoot : MonoBehaviour
 
     private float m_CurrentScaleRatio = 1f;
     private Vector3 m_StartScale;
+
+    [Header("Audio")] 
+    private StudioEventEmitter deathEvent;
 
     // Start is called before the first frame update
     void Start()
@@ -63,6 +67,7 @@ public class DestructibleRoot : MonoBehaviour
 
         if (m_RemainingTime <= 0f)
         {
+            deathEvent.Play();
             Destroy(gameObject);
         }
     }

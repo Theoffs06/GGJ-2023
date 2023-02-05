@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{a1b54bd9-bd8e-4a5b-9dfb-e2853871fb36}">
-		<property name="assetPath" />
+	<object class="AudioFile" id="{cbeccf2c-fb07-467b-8d24-e9c8e265f2cd}">
+		<property name="assetPath">
+			<value>Branch_Death.wav</value>
+		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>
 		</property>
@@ -9,7 +11,7 @@
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>0.65100000000000002</value>
+			<value>2.7999999999999998</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{7537c99e-f4cb-49b6-862d-12d2446b7726}</destination>
