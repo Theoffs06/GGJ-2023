@@ -18,6 +18,12 @@ public class WeaponMinigun : Weapon
     [SerializeField]
     private float m_Duration = 0.1f;
 
+    private ScreenShake m_ScreenShake = null;
+
+    private void Start()
+    {
+        m_ScreenShake = FindObjectOfType<ScreenShake>();
+    }
 
     public override void StartShooting()
     {
@@ -46,8 +52,14 @@ public class WeaponMinigun : Weapon
                 Instantiate<Bullet>(m_BulletPrefab, transform.position, Quaternion.LookRotation(transform.forward));
             }
 
-            GameObject.Find("ScreenShake").GetComponent<ScreenShake>().Shake(m_Duration);
+            if (m_ScreenShake)
+            {
+                m_ScreenShake.Shake(m_Duration);
+            }
+
             m_CurrentDelay += Time.deltaTime;
+
+            Debug.Log(m_CurrentDelay);
 
             if (m_CurrentDelay >= m_DelayBetweenBullets)
             {
