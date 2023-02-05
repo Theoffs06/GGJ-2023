@@ -122,8 +122,8 @@ MonoBehaviour:
   m_RootsInArea: []
   m_CrystalInArea: []
   m_RootsDestructionQueue: 
-  actionEvent: {fileID: 0}
-  rechargedEvent: {fileID: 0}
+  actionEvent: {fileID: 8912101713738731872}
+  rechargedEvent: {fileID: 6518510967803872142}
 --- !u!23 &6604529804314427092
 MeshRenderer:
   m_ObjectHideFlags: 0

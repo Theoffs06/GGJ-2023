@@ -41,7 +41,6 @@ public class RewindGun : Weapon
 
     [Header("Audio")] 
     [SerializeField] private StudioEventEmitter actionEvent;
-    [SerializeField] private StudioEventEmitter rechargedEvent;
 
     private TimeManager m_TimeManager;
     private bool onCooldown = false;
@@ -84,7 +83,9 @@ public class RewindGun : Weapon
             {
                 CallRewind = true;
                 GetComponent<MeshRenderer>().enabled = true;
-                actionEvent.Play();
+                if (!actionEvent.IsPlaying()) {
+                    actionEvent.Play();
+                }
             }
         }
         if (Input.GetButtonUp("Fire2"))
