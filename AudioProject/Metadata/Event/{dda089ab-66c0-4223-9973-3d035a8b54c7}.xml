@@ -2,13 +2,13 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{dda089ab-66c0-4223-9973-3d035a8b54c7}">
 		<property name="name">
-			<value>Minion</value>
+			<value>MinionAttack</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
 		</property>
 		<relationship name="folder">
-			<destination>{02f5ab89-5210-4a56-8809-c23cad6933af}</destination>
+			<destination>{39d086f7-0da7-4746-bac7-77098a9d5001}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{a8bd36fa-14e4-4ac4-9820-6febf86014b9}</destination>

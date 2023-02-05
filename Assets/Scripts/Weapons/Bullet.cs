@@ -45,6 +45,7 @@ public class Bullet : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         { 
+            other.GetComponent<Creature>().damageEvent.Play();
             other.GetComponent<Creature>().CurrentHealth -= 1;
         }
         
