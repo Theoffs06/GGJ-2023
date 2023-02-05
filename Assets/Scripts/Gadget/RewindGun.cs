@@ -65,7 +65,7 @@ public class RewindGun : Weapon
                 foreach (TimeCrystal crystal in m_CrystalInArea.ToArray())
                 {
                     m_CrystalInArea.Remove(crystal);
-                    crystal.Collect();
+                    //crystal.Collect();
 
                 }
                 m_CollectTimer = 0;
@@ -105,6 +105,7 @@ public class RewindGun : Weapon
             if (m_RewindTimer <= m_RewindTimerMax)
             {
                 m_RewindTimer += Time.deltaTime;
+
             }
             else
                 onCooldown = false;
@@ -112,11 +113,13 @@ public class RewindGun : Weapon
         if (Input.GetKey("e") && m_TimeManager.TimeCharge > 0)
         {
             RewindRoots();
+            GetComponent<MeshRenderer>().enabled = true;
         }
-        
+
         if (Input.GetKeyUp("e") && m_TimeManager.TimeCharge > 0)
         {
             StopRewindRoots();
+            GetComponent<MeshRenderer>().enabled = false;
         }
     }
 

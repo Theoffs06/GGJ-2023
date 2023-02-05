@@ -99,8 +99,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_DistanceFromPlayer: 2
   m_BulletPrefab: {fileID: 9044203432059085758, guid: 9be50fdfd371d0d459443136d841d339, type: 3}
-  m_DelayBetweenBullets: 0.1
+  m_DelayBetweenBullets: 0.2
   actionEvent: {fileID: 7110737029477949337}
+  m_Duration: 0.1
 --- !u!1 &9078900300533672317
 GameObject:
   m_ObjectHideFlags: 0
