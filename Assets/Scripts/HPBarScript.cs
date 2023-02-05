@@ -29,7 +29,11 @@ public class HPBarScript : MonoBehaviour
             HPCells[player.Life - 1].value = player.HP;
         if (player.Life == 0)
         {
-            if(!musicDeath.IsPlaying()) gameOver.SetActive(true);
+            if (!musicDeath.IsPlaying())
+            {
+                musicDeath.Play();
+            }
+            gameOver.SetActive(true);
         }
     }
 }

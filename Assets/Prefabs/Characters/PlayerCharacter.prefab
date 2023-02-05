@@ -137,6 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 4018474070200593934}
+  shake: 0
   shakeAmount: 0.1
 --- !u!1 &1544813386525448842
 GameObject:
@@ -253,7 +254,7 @@ CapsuleCollider:
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &2316962304827742314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,7 +297,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &4112312891358787250
 GameObject:
   m_ObjectHideFlags: 0
