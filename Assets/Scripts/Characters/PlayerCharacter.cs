@@ -12,7 +12,7 @@ public class PlayerCharacter : Character
 
     // Player life
     [SerializeField]
-    public int HP = 100;
+    public float HP = 100;
     public int Life = 3;
 
 

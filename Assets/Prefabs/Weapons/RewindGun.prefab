@@ -111,8 +111,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DistanceFromPlayer: 1
+<<<<<<< HEAD
+  m_MeshRenderer: {fileID: 6604529804314427092}
+  m_RewindIntensity: 0.04
+=======
   m_MeshRenderer: {fileID: 0}
   m_RewindIntensity: 0.002
+>>>>>>> e3d0e11c05225e0840f5767097831ce93381c81a
   CallRewind: 0
   m_IsRewinding: 0
   m_RewindTimerMax: 2
@@ -220,6 +225,30 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+<<<<<<< HEAD
+--- !u!33 &6604529804314427095
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6604529804314427088}
+  m_Mesh: {fileID: -4744605630609734064, guid: ff4ca5e31bcc23d4e84e1084c44a8622, type: 3}
+--- !u!135 &6604529804314427093
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6604529804314427088}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2000
+  m_Center: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> e3d0e11c05225e0840f5767097831ce93381c81a
 --- !u!1 &9132609059066480527
 GameObject:
   m_ObjectHideFlags: 0

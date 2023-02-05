@@ -88,7 +88,13 @@ public class RewindGun : Weapon
                 onCooldown = true;
             }
             Show(false);
+            foreach (Creature creature in FindObjectsOfType<Creature>())
+            {
+                if (creature.GetComponent<FilteredRewind>().Selected)
+                    creature.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+            }
             CallRewind = false;
+
         }
         if (Input.GetButtonUp("Fire2"))
         {
@@ -98,6 +104,11 @@ public class RewindGun : Weapon
                 onCooldown = true;
             }
             Show(false);
+            foreach (Creature creature in FindObjectsOfType<Creature>())
+            {
+                if (creature.GetComponent<FilteredRewind>().Selected)
+                    creature.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+            }
             CallRewind = false;
 
 

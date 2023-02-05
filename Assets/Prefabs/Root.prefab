@@ -112,8 +112,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f81efc3bf6ae4ef4b9999f3505b61194, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_DestructionTime: 5
-  m_RegenTimeScale: 2
+  m_DestructionTime: 20
+  m_ChangeRespawnRate: 1.5
+  m_BaseRespawnRate: 6
+  m_Spawners: []
+  m_RegenTimeScale: 1.5
+  deathEvent: {fileID: 322802267452716671}
 --- !u!54 &2256355468540508791
 Rigidbody:
   m_ObjectHideFlags: 0

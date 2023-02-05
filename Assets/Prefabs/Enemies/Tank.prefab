@@ -92,7 +92,7 @@ MonoBehaviour:
   isKamikaze: 0
   isTank: 1
   maxHealth: 10
-  attack: 33
+  attack: 33.33
   rangeAttack: 1.5
   attackRate: 1
   damageEvent: {fileID: 8427632153243432447}

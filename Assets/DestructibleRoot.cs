@@ -24,7 +24,8 @@ public class DestructibleRoot : MonoBehaviour
     private float m_CurrentScaleRatio = 1f;
     private Vector3 m_StartScale;
 
-    [Header("Audio")] 
+    [Header("Audio")]
+    [SerializeField]
     private StudioEventEmitter deathEvent;
 
     // Start is called before the first frame update

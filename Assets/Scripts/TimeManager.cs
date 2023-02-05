@@ -74,7 +74,7 @@ public class TimeManager : MonoBehaviour
             if (timer >= TimerMax)
             {
                 timer = 0;
-                TimeCharge -= TimeChargeDecreaseValue;
+                TimeCharge = Mathf.Clamp(TimeCharge - TimeChargeDecreaseValue, 0, 100);
             }
         }
         else
