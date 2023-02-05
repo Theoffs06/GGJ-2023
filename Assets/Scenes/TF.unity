@@ -2320,37 +2320,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2206135871539226364, guid: 8c42608225b0c4644905e0b3edaad22a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2206135871539226364, guid: 8c42608225b0c4644905e0b3edaad22a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2206135871539226364, guid: 8c42608225b0c4644905e0b3edaad22a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2206135871539226364, guid: 8c42608225b0c4644905e0b3edaad22a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 2206135871539226364, guid: 8c42608225b0c4644905e0b3edaad22a, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 2206135871539226364, guid: 8c42608225b0c4644905e0b3edaad22a, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2206135871539226364, guid: 8c42608225b0c4644905e0b3edaad22a, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2206135871539226364, guid: 8c42608225b0c4644905e0b3edaad22a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 90
+    - target: {fileID: 374901916680047188, guid: 8c42608225b0c4644905e0b3edaad22a, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2316962304827742312, guid: 8c42608225b0c4644905e0b3edaad22a, type: 3}
       propertyPath: m_RootOrder
@@ -2408,9 +2380,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerCharacter
       objectReference: {fileID: 0}
+    - target: {fileID: 4428452782473808310, guid: 8c42608225b0c4644905e0b3edaad22a, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6036459151342807540, guid: 8c42608225b0c4644905e0b3edaad22a, type: 3}
       propertyPath: m_Radius
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6188501991655527643, guid: 8c42608225b0c4644905e0b3edaad22a, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8907578331597461589, guid: 8c42608225b0c4644905e0b3edaad22a, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c42608225b0c4644905e0b3edaad22a, type: 3}
@@ -2647,26 +2631,6 @@ PrefabInstance:
     - target: {fileID: 9030061702125899011, guid: 25d6b2ef870521e48afd5af870f93a10, type: 3}
       propertyPath: m_Name
       value: CrystalDirector
-      objectReference: {fileID: 0}
-    - target: {fileID: 9030061702125899036, guid: 25d6b2ef870521e48afd5af870f93a10, type: 3}
-      propertyPath: sizeX
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 9030061702125899036, guid: 25d6b2ef870521e48afd5af870f93a10, type: 3}
-      propertyPath: sizeY
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 9030061702125899036, guid: 25d6b2ef870521e48afd5af870f93a10, type: 3}
-      propertyPath: TimerBeforeSpawnMin
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9030061702125899036, guid: 25d6b2ef870521e48afd5af870f93a10, type: 3}
-      propertyPath: Corners.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 9030061702125899036, guid: 25d6b2ef870521e48afd5af870f93a10, type: 3}
-      propertyPath: TimerBeforeSpawnMaxTreshold
-      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 9030061702125899037, guid: 25d6b2ef870521e48afd5af870f93a10, type: 3}
       propertyPath: m_RootOrder
