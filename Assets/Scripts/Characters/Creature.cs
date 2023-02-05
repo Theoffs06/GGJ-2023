@@ -1,6 +1,11 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 public class Creature : Character {
     public int CurrentHealth { get; set; }
@@ -17,6 +22,13 @@ public class Creature : Character {
     [SerializeField] private int attack;
     [SerializeField] private float rangeAttack; 
     [SerializeField] private float attackRate;
+
+    [FormerlySerializedAs("DamageEvent")]
+    [Header("Audio System")] 
+    public StudioEventEmitter damageEvent;
+    [SerializeField] private StudioEventEmitter attackEvent; 
+    [SerializeField] private StudioEventEmitter deathEvent; 
+    [SerializeField] private StudioEventEmitter boomEvent;
 
     private Transform _target;
     private NavMeshAgent _navMeshAgent;
@@ -35,6 +47,7 @@ public class Creature : Character {
         base.Update();
 
         if (IsDead) {
+            deathEvent.Play();
             Destroy(gameObject);
             return;
         }
@@ -53,6 +66,7 @@ public class Creature : Character {
                     }
 
                     if (_time >= attackRate) {
+                        attackEvent.Play();
                         _target.GetComponent<PlayerCharacter>().HP -= attack;
                         _time = 0;
                     }
@@ -60,10 +74,10 @@ public class Creature : Character {
                 }
             }
         }
-
     }
-
+    
     private void Boom() {
+        boomEvent.Play();
         _target.GetComponent<PlayerCharacter>().HP -= attack;
         Destroy(gameObject);
     }

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{9ba6bbbb-ab18-4a41-bcfb-8876a1bf6ba0}">
+	<object class="AudioFile" id="{ce181c00-210b-4eee-a269-80540bc2eeea}">
 		<property name="assetPath">
-			<value>Minion_Grunt_2.wav</value>
+			<value>Minion__Suicide_death_1.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>
@@ -11,7 +11,7 @@
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>1.4199999999999999</value>
+			<value>0.52000000000000002</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{7537c99e-f4cb-49b6-862d-12d2446b7726}</destination>
