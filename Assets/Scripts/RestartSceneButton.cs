@@ -9,4 +9,14 @@ public class RestartSceneButton : MonoBehaviour
     {
         SceneManager.LoadScene("TF");
     }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MenuScreen");
+    }
+
+    public void Exit()
+    {
+        Application.Quit();
+    }
 }

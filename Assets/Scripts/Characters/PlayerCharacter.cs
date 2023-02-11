@@ -45,6 +45,7 @@ public class PlayerCharacter : Character
 
     private bool playDeath;
     [SerializeField] private GameObject settingScreen;
+     public GameObject WinScreen;
 
 
     // Start is called before the first frame update
@@ -62,28 +63,38 @@ public class PlayerCharacter : Character
     {
         base.Update();
 
-        UpdateMouseMoveAxis();
-        UpdateInputMoveAxis();
-        UpdateMouseShoot();
-        UpdateJoystickShootMoveAxis();
+        if (Life > 0 && !WinScreen.activeSelf)
+        {
+            UpdateMouseMoveAxis();
+            UpdateInputMoveAxis();
+            UpdateMouseShoot();
+            UpdateJoystickShootMoveAxis();
+            if (Input.GetKeyDown("r"))
+                CycleWeapon();
+        }
 
-        if(HP <= 0)
+
+        if(HP <= 0 && Life >=0 && !WinScreen.activeSelf)
         {
             brokenLifeEvent.Play();
             Life--;
             HP = 100;
         }
-        if (Input.GetKeyDown("r"))
-            CycleWeapon();
+
+
 
         if (rewindGun.IsVisible())
             m_WeaponList[m_CurrentWeaponIndex].gameObject.SetActive(false);
         else
             m_WeaponList[m_CurrentWeaponIndex].gameObject.SetActive(true);
 
-        if (Input.GetKeyDown("escape") && !settingScreen.activeSelf)
+        if (Input.GetKeyDown("escape") && !settingScreen.activeSelf && Life >0)
         {
-            m_Menu.GetComponent<Menu>().Pause();
+            if(!m_Menu.activeSelf)
+                m_Menu.GetComponent<Menu>().Pause();
+            else
+                m_Menu.GetComponent<Menu>().Resume();
+
 
         }
 
@@ -93,6 +104,7 @@ public class PlayerCharacter : Character
                 playDeath = true;
                 deathEvent.Play();
             }
+            HP = 0;
         }
     }
 
@@ -101,6 +113,8 @@ public class PlayerCharacter : Character
         Vector3 velocity = Vector3.zero;
         velocity.x = m_MoveAxis.x * m_MoveSpeed;
         velocity.z = m_MoveAxis.y * m_MoveSpeed;
+
+
         
         if (m_MoveAxis.x != 0 || m_MoveAxis.y != 0) {
             if (!footstepEvent.IsPlaying()) {
@@ -118,10 +132,14 @@ public class PlayerCharacter : Character
 
         if (m_Animator)
         {
-            m_Animator.SetFloat("Speed", velocity.magnitude);
+            if(Life > 0 && !WinScreen.activeSelf)
+                m_Animator.SetFloat("Speed", velocity.magnitude);
+            else
+                m_Animator.SetFloat("Speed", 0);
+
         }
 
-        if (m_CharacterController)
+        if (m_CharacterController && Life >0 && !WinScreen.activeSelf)
         {
             m_CharacterController.SimpleMove(velocity);
         }

@@ -38,13 +38,15 @@ public class RewindGun : Weapon
     private float m_CollectTimer = 0f;
 
     [SerializeField]
-    private List<DestructibleRoot> m_RootsInArea = new List<DestructibleRoot>();
+    public List<DestructibleRoot> RootsInArea = new List<DestructibleRoot>();
     [SerializeField] private List<TimeCrystal> m_CrystalInArea = new List<TimeCrystal>();
     [SerializeField]
     private List<int> m_RootsDestructionQueue = new List<int>();
 
     [Header("Audio")] 
     [SerializeField] private StudioEventEmitter actionEvent;
+
+    private PlayerCharacter m_Player;
 
     private TimeManager m_TimeManager;
     private bool onCooldown = false;
@@ -58,6 +60,7 @@ public class RewindGun : Weapon
     // Start is called before the first frame update
     void Start()
     {
+        m_Player = FindObjectOfType<PlayerCharacter>();
         m_RewindManager = FindObjectOfType<RewindManager>();
         m_TimeManager = GameObject.Find("TimeManager").GetComponent<TimeManager>();
         m_MeshRenderer = GetComponent<MeshRenderer>();
@@ -67,7 +70,7 @@ public class RewindGun : Weapon
     {
         if(m_TimeManager.TimeCharge > 0)
         {
-            if (Input.GetButton("Fire2"))
+            if (Input.GetButton("Fire2") && m_Player.Life >0)
             {
                 if (m_TimeManager.TimeCharge > 0 && !onCooldown)
                 {
@@ -96,7 +99,7 @@ public class RewindGun : Weapon
             CallRewind = false;
 
         }
-        if (Input.GetButtonUp("Fire2"))
+        if (Input.GetButtonUp("Fire2") && m_Player.Life > 0)
         {
             if (CallRewind)
             {
@@ -123,16 +126,16 @@ public class RewindGun : Weapon
             else
                 onCooldown = false;
         }
-        if (Input.GetKey("e") && m_TimeManager.TimeCharge > 0)
+        if (Input.GetKey("e") && m_TimeManager.TimeCharge > 0 && m_Player.Life > 0 && !m_Player.WinScreen.activeSelf)
         {
             RewindRoots();
-            GetComponent<MeshRenderer>().enabled = true;
+            Show(true);
         }
 
-        if (Input.GetKeyUp("e") && m_TimeManager.TimeCharge > 0)
+        if (Input.GetKeyUp("e") && m_TimeManager.TimeCharge > 0 && m_Player.Life > 0 && !m_Player.WinScreen.activeSelf)
         {
             StopRewindRoots();
-            GetComponent<MeshRenderer>().enabled = false;
+            Show(false);
         }
     }
 
@@ -196,12 +199,12 @@ public class RewindGun : Weapon
     void RewindRoots()
     {
         m_TimeManager.IsRewinding = true;
-        int numRoots = m_RootsInArea.Count;
+        int numRoots = RootsInArea.Count;
         for (int i = 0; i < numRoots; i++)
         {
-            if (m_RootsInArea[i])
+            if (RootsInArea[i])
             {
-                m_RootsInArea[i].Rewind();
+                RootsInArea[i].Rewind();
             }
             else
             {
@@ -213,7 +216,7 @@ public class RewindGun : Weapon
         for (int i = QueueLength - 1; i >= 0; i--)
         {
             int indexToRemove = m_RootsDestructionQueue[i];
-            m_RootsInArea.RemoveAt(indexToRemove);
+            RootsInArea.RemoveAt(indexToRemove);
         }
 
         m_RootsDestructionQueue.Clear();
@@ -222,12 +225,12 @@ public class RewindGun : Weapon
     void StopRewindRoots()
     {
         m_TimeManager.IsRewinding = false;
-        int numRoots = m_RootsInArea.Count;
+        int numRoots = RootsInArea.Count;
         for (int i = 0; i < numRoots; i++)
         {
-            if (m_RootsInArea[i])
+            if (RootsInArea[i])
             {
-                m_RootsInArea[i].StopRewind();
+                RootsInArea[i].StopRewind();
             }
         }
     }
@@ -244,15 +247,15 @@ public class RewindGun : Weapon
             }
         }
 
-        if (LayerMask.LayerToName(other.gameObject.layer) == "Root")
+        /*if (LayerMask.LayerToName(other.gameObject.layer) == "Root")
         {
             DestructibleRoot newRoot = other.gameObject.GetComponent<DestructibleRoot>();
 
             if (newRoot)
             {
-                m_RootsInArea.Add(newRoot);
+                RootsInArea.Add(newRoot);
             }
-        }
+        }*/
 
     }
 
@@ -268,15 +271,15 @@ public class RewindGun : Weapon
             }
         }
 
-        if (LayerMask.LayerToName(other.gameObject.layer) == "Root")
+        /*if (LayerMask.LayerToName(other.gameObject.layer) == "Root")
         {
             DestructibleRoot newRoot = other.gameObject.GetComponent<DestructibleRoot>();
 
             if (newRoot)
             {
                 newRoot.StopRewind();
-                m_RootsInArea.Remove(newRoot);
+                RootsInArea.Remove(newRoot);
             }
-        }
+        }*/
     }
 }

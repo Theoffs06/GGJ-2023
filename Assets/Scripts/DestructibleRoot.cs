@@ -23,10 +23,13 @@ public class DestructibleRoot : MonoBehaviour
 
     private float m_CurrentScaleRatio = 1f;
     private Vector3 m_StartScale;
+    [SerializeField]
+    private GameObject winScreen;
 
     [Header("Audio")]
     [SerializeField]
     private StudioEventEmitter deathEvent;
+
 
     // Start is called before the first frame update
     void Start()
@@ -80,8 +83,10 @@ public class DestructibleRoot : MonoBehaviour
 
         if (m_RemainingTime <= 0f)
         {
+            winScreen.SetActive(true);
             deathEvent.Play();
             Destroy(gameObject);
+
         }
     }
 }
