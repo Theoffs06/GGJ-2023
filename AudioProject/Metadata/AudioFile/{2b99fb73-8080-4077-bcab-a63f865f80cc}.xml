@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{2b99fb73-8080-4077-bcab-a63f865f80cc}">
+		<property name="assetPath">
+			<value>GGJ2023_Theme_online-audio-converter.com.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>88.058775510204086</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{7537c99e-f4cb-49b6-862d-12d2446b7726}</destination>
+		</relationship>
+	</object>
+</objects>

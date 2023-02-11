@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using FMODUnity;
 using UnityEngine;
 
 public class TimeManager : MonoBehaviour
@@ -19,6 +20,7 @@ public class TimeManager : MonoBehaviour
             crystalAmount = value;
             if (CrystalAmount >= CrystalReqForActivation)
             {
+                rechargedEvent.Play();
                 FillBar();
                 crystalAmount = 0;
             }
@@ -38,6 +40,9 @@ public class TimeManager : MonoBehaviour
     public float TimerMax = 1;
     public int TimeChargeDecreaseValue = 2;
     public bool IsRewinding = false;
+    
+    [Header("Audio")] 
+    [SerializeField] private StudioEventEmitter rechargedEvent;
 
     void OnEnable()
     {

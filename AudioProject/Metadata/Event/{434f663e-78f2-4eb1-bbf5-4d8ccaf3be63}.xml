@@ -5,7 +5,7 @@
 			<value>DeathMusic</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>0</value>
 		</property>
 		<relationship name="folder">
 			<destination>{c06a586b-239b-48af-a815-ae199fb1dcf0}</destination>
@@ -64,6 +64,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{e1f5e42c-44d5-4869-bbb4-5307b542994e}">
+		<property name="volume">
+			<value>-3.5</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{8c8a9891-c797-4528-9c7c-8edff5f46fa1}</destination>
 		</relationship>
@@ -90,10 +93,22 @@
 	<object class="MixerBusPanner" id="{92176d7c-eb6c-4147-95a0-4c839d7c231b}" />
 	<object class="MixerBusEffectChain" id="{8c8a9891-c797-4528-9c7c-8edff5f46fa1}">
 		<relationship name="effects">
+			<destination>{6da6987e-0ccd-4147-97e4-aa7d5b73419e}</destination>
 			<destination>{9a6608de-57b8-4792-ab41-3f412e385038}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{fd072c44-223f-4104-a84a-a5f04f480e19}" />
 	<object class="MixerBusFader" id="{57e0af4f-1443-472d-ae25-e054575bc2cc}" />
+	<object class="ChannelMixEffect" id="{6da6987e-0ccd-4147-97e4-aa7d5b73419e}">
+		<property name="outputGrouping">
+			<value>1</value>
+		</property>
+		<property name="gain00">
+			<value>-28.5</value>
+		</property>
+		<property name="gain01">
+			<value>-8</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{9a6608de-57b8-4792-ab41-3f412e385038}" />
 </objects>

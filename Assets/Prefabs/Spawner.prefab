@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRate: 6
-  sizeX: 0
-  sizeY: 0
+  sizeX: 10
+  sizeY: 10
   enemies:
   - prefab: {fileID: 8672334794133865670, guid: f94ef99d699d7bf4893a08e0c6d7f9ff, type: 3}
     probability: 91

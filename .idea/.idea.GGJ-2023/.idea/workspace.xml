@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="20d39f78-f34b-4875-b9f3-3c2c376cf758" name="Changes" comment="" />
+    <list default="true" id="20d39f78-f34b-4875-b9f3-3c2c376cf758" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GGJ-2023/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GGJ-2023/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Characters/PlayerCharacter.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Characters/PlayerCharacter.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spawner.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Spawner.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TF.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TF.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TimeManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TimeManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AudioProject/.cache/{36e5fea6-0019-4d25-9d75-06aeb1dfba64}.pdc" beforeDir="false" afterPath="$PROJECT_DIR$/AudioProject/.cache/{36e5fea6-0019-4d25-9d75-06aeb1dfba64}.pdc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AudioProject/.cache/{60a4d19f-1120-43fb-b2a2-b51b20d768bd}.pdc" beforeDir="false" afterPath="$PROJECT_DIR$/AudioProject/.cache/{60a4d19f-1120-43fb-b2a2-b51b20d768bd}.pdc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AudioProject/.cache/{b29089b7-2998-49c1-8ca3-12be51efd503}.pdc" beforeDir="false" afterPath="$PROJECT_DIR$/AudioProject/.cache/{b29089b7-2998-49c1-8ca3-12be51efd503}.pdc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AudioProject/.cache/{c0716f96-c97c-4bab-9e5d-df14f5de11be}.pdc" beforeDir="false" afterPath="$PROJECT_DIR$/AudioProject/.cache/{c0716f96-c97c-4bab-9e5d-df14f5de11be}.pdc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AudioProject/Build/Desktop/Master.bank" beforeDir="false" afterPath="$PROJECT_DIR$/AudioProject/Build/Desktop/Master.bank" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AudioProject/Build/Desktop/Master.strings.bank" beforeDir="false" afterPath="$PROJECT_DIR$/AudioProject/Build/Desktop/Master.strings.bank" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AudioProject/Build/Desktop/Music.bank" beforeDir="false" afterPath="$PROJECT_DIR$/AudioProject/Build/Desktop/Music.bank" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AudioProject/Build/Desktop/Sounds.bank" beforeDir="false" afterPath="$PROJECT_DIR$/AudioProject/Build/Desktop/Sounds.bank" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AudioProject/Metadata/Event/{434f663e-78f2-4eb1-bbf5-4d8ccaf3be63}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/AudioProject/Metadata/Event/{434f663e-78f2-4eb1-bbf5-4d8ccaf3be63}.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AudioProject/Metadata/Event/{51852151-2b7d-4596-b400-67cdb98e80f3}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/AudioProject/Metadata/Event/{51852151-2b7d-4596-b400-67cdb98e80f3}.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,26 +32,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.C#&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Discover.Launch.Via.Unity": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "settings.editor.selected.configurable": "preferences.sourceCode.C#",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\fonta\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\fonta\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\fonta\\AppData\\Local\\Symbols\\src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\peque\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\DecompilerCache",
+      "C:\\Users\\peque\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\SourcesCache",
+      "C:\\Users\\peque\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.17f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="D:\UnityEditor\2021.3.17f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath C:\Users\fonta\OneDrive\Bureau\GGJ-2023 -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Users\fonta\OneDrive\Bureau\GGJ-2023" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -43,7 +59,7 @@
       <method v="2" />
     </configuration>
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.17f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="D:\UnityEditor\2021.3.17f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\Users\fonta\OneDrive\Bureau\GGJ-2023 -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Users\fonta\OneDrive\Bureau\GGJ-2023" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -84,6 +100,7 @@
       <workItem from="1675540301209" duration="1106000" />
       <workItem from="1675584315970" duration="22534000" />
       <workItem from="1675615590262" duration="774000" />
+      <workItem from="1676137204284" duration="323000" />
     </task>
     <servers />
   </component>
