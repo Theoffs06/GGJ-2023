@@ -907,6 +907,10 @@ PrefabInstance:
       propertyPath: timeManager
       value: 
       objectReference: {fileID: 1461265047}
+    - target: {fileID: 6335461586174659284, guid: 37563d9d2aea0cb45bd0d3b1c642713c, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 1988051307}
     - target: {fileID: 6445944376540445775, guid: 37563d9d2aea0cb45bd0d3b1c642713c, type: 3}
       propertyPath: m_Name
       value: Image
@@ -1248,6 +1252,10 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 8657610354550870026, guid: 8c42608225b0c4644905e0b3edaad22a, type: 3}
+      propertyPath: orthographic size
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3341831752275715315, guid: 8c42608225b0c4644905e0b3edaad22a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8c42608225b0c4644905e0b3edaad22a, type: 3}
@@ -1312,6 +1320,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!20 &1988051307 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 8657610354550870026, guid: 8c42608225b0c4644905e0b3edaad22a, type: 3}
+  m_PrefabInstance: {fileID: 1880887111}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2027039726
 PrefabInstance:
   m_ObjectHideFlags: 0
