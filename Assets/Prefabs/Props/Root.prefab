@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2256355468540508793}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.306736, y: 3, z: 4.74}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3, y: 7, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -65,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 52c79073804a9054a927ee4c39adf431, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -115,8 +115,13 @@ MonoBehaviour:
   m_DestructionTime: 20
   m_ChangeRespawnRate: 1.5
   m_BaseRespawnRate: 6
-  m_Spawners: []
+  m_Spawners:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   m_RegenTimeScale: 1.5
+  winScreen: {fileID: 0}
   deathEvent: {fileID: 322802267452716671}
 --- !u!54 &2256355468540508791
 Rigidbody:

@@ -26,9 +26,9 @@ public class DestructibleRoot : MonoBehaviour
     [SerializeField]
     private GameObject winScreen;
 
-    [Header("Audio")]
-    [SerializeField]
-    private StudioEventEmitter deathEvent;
+    [Header("Audio")] 
+    [SerializeField] private StudioEventEmitter deathEvent;
+    [SerializeField] private StudioEventEmitter musicEven; 
 
 
     // Start is called before the first frame update
@@ -84,6 +84,7 @@ public class DestructibleRoot : MonoBehaviour
         if (m_RemainingTime <= 0f)
         {
             winScreen.SetActive(true);
+            musicEven.Stop();
             deathEvent.Play();
             Destroy(gameObject);
 

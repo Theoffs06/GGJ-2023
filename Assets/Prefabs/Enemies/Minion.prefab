@@ -285,6 +285,7 @@ MonoBehaviour:
   attackEvent: {fileID: 6935893851900143775}
   deathEvent: {fileID: 6140815183464550435}
   boomEvent: {fileID: 0}
+  explosion: {fileID: 0}
 --- !u!54 &-6162338247243790594
 Rigidbody:
   m_ObjectHideFlags: 0
